@@ -1,0 +1,369 @@
+<!-- Визитки с ламинацией Soft Touch в типографии ФиПС -->
+
+<style>
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		height: 40px;
+		border-radius: 5px;
+	}
+
+	.t-form__screen .t-form__errorbox-wrapper {
+		clear: both;
+	}
+
+	.t-form__inputsbox.t-form__screen {
+		background-color: #fff;
+		padding: 20px;
+	}
+
+	.t-form__screen .t-upwidget-container__button {
+		background-color: #44647d !important;
+	}
+
+	.t-form__screen .t-input-group_fr {
+		text-align: right;
+	}
+
+	.t-form__screen .t-form__submit {
+		margin: 30px 0 0;
+	}
+
+	.t-form__screen .t-input-group {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		margin: 0;
+		width: 20%;
+		min-width: 200px;
+	}
+
+	.t-form__screen .t-input-title {
+		width: 100%;
+		height: auto;
+	}
+
+	.t-form__screen-wrapper.t-form__screen-wrapper_active {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_fr {
+		text-align: right;
+		justify-content: flex-end;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+		width: 50%;
+		align-content: flex-end;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_tx {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		width: 90%;
+	}
+
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_cb, 
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_uw {
+    width: 10%;
+    min-width: 290px;
+    margin-bottom: 0;
+}
+
+	.t-form__screen .t-input-group_ph,
+	.t-form__screen .t-input-group_sb,
+	.t-form__screen .t-input-group_in,
+	.t-form__screen .t-input-group_em,
+	.t-form__screen .t-input-group_nm,
+	.t-form__screen .t-input-group_uw {
+		width: 50%;
+		margin-right: 0;
+	}
+
+	.t-form__screen .t-input-group_in[data-input-lid="1584868297796"] {
+		width: 20%;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper {
+		width: 50%;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+		position: relative;
+		top: 10px;
+		left: -80px;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_cb .t-text_xs {
+		font-size: 15px;
+	}
+
+	.t-form__screen .t-form__submit .t-form__screen-btn-next {
+    	padding: 0 30px 0 10px;
+	}
+	.t-form__screen .t-form__submit .t-form__screen-btn-prev {
+		padding: 0 10px 0 30px;
+	}
+	.t-form__screen .t-form__submit .t-submit{
+		padding: 0 10px;
+	}
+	.t-form__screen .t-input-group{
+		margin-bottom: 25px;	
+	}
+	.t-form__screen .t-select__wrapper:after{
+		right: 70px;
+	}
+
+	@media screen and (max-width: 700px) {
+		.t-form__screen .t-input-group.t-input-group_fr {
+			text-align: center;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_ph,
+		.t-form__screen .t-input-group_sb,
+		.t-form__screen .t-input-group_in,
+		.t-form__screen .t-input-group_em,
+		.t-form__screen .t-input-group_nm,
+		.t-form__screen .t-input-group_uw {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.t-form__screen-wrapper.t-form__screen-wrapper_active {
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_uw {
+			text-align: center;
+		}
+
+		.t-form__screen .t-input-group_uw .t-input-block {
+			display: flex;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+			width: 100%;
+		}
+
+		.t-form__screen .t-form__screen-btn-prev {
+			margin-right: 0;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper {
+			justify-content: center;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-block {
+			width: auto;
+			display: flex;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+			position: inherit;
+			justify-content: center;
+			margin: 10px 0 15px;
+		}
+	}
+	@media screen and (max-width: 460px){
+		.t-form__screen .t-form__submit > .t-form__screen-btn-prev {
+			margin-bottom: 15px;
+			padding: 10px;
+		}
+		.t-form__screen .t-select__wrapper:after {
+			right: 40px;
+		}
+	}
+</style>
+<script>
+	$(document).ready(function () {
+        $('[data-input-lid="1587736385407"]').css("display", "none"); // убираем пункт ламинация (решение директора) 
+		try {
+			setTimeout(function () {
+				$('.t-form__screen-current-view').remove();
+				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
+				$('[data-input-lid="1585849157154"] .t-input.js-tilda-rule').val('1');
+
+				function updateFinalPrice() {
+
+					if (column == 0) {
+						rangeVal = 100;
+					}
+					let final_price = Math.floor(table[size][row][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+
+					if (roundedCorners) {
+						final_price += Math.floor(table[size][5][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+					}
+
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
+                	$('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+				}
+
+				//определение переменных
+				const table_300 = [
+					[
+						// Визитки Soft touch 90*50 - стандарт
+						[100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[11.26, 10.47, 9.42, 8.95, 8.51, 8.18, 7.88, 7.59, 7.28, 7.07, 6.88, 6.71, 6.57, 6.45, 6.36, 6.30, 6.26, 6.23, 6.22], // Односторонние цветные (4+0)
+						[11.99, 11.15, 10.04, 9.53, 9.06, 8.71, 8.39, 8.08, 7.80, 7.56, 7.36, 7.18, 7.03, 6.91, 6.81, 6.75, 6.70, 6.67, 6.65], // Двусторонние цветные (4+4)
+						[12.33, 11.47, 10.32, 9.80, 9.31, 8.96, 8.63, 8.31, 8.02, 7.78, 7.57, 7.39, 7.23, 7.10, 7.00, 6.94, 6.89, 6.86, 6.84], // Запечатка фона (4+0)
+						[12.86, 11.96, 10.76, 10.23, 9.71, 9.35, 9.00, 8.67, 8.36, 8.11, 7.89, 7.70, 7.54, 7.41, 7.30, 7.24, 7.19, 7.15, 7.14], // Запечатка фона (4+4)
+						[1.9, 1.81, 1.62, 1.54, 1.47, 1.41, 1.36, 1.31, 1.27, 1.25, 1.23, 1.21, 1.19, 1.18, 1.16, 1.14, 1.13, 1.11, 1.1] // Скругление углов
+					],
+					[
+						// Визитки Soft touch 85*55 - евро
+						[100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[11.59, 10.78, 9.92, 9.42, 8.95, 8.61, 8.29, 7.98, 7.66, 7.43, 7.23, 7.06, 6.91, 6.79, 6.69, 6.63, 6.59, 6.55, 6.54], // Односторонние цветные (4+0)
+						[12.4, 11.53, 10.61, 10.08, 9.58, 9.21, 8.87, 8.54, 8.24, 8.00, 7.78, 7.59, 7.43, 7.30, 7.20, 7.13, 7.08, 7.05, 7.03], // Двусторонние цветные (4+4)
+						[12.66, 11.77, 10.83, 10.29, 9.78, 9.40, 9.06, 8.72, 8.42, 8.16, 7.94, 7.75, 7.59, 7.45, 7.35, 7.28, 7.23, 7.20, 7.18], // Запечатка фона (4+0)
+						[13.32, 12.39, 11.40, 10.83, 10.29, 9.89, 9.53, 9.18, 8.85, 8.59, 8.36, 8.18, 7.99, 7.84, 7.73, 7.66, 7.61, 7.57, 7.56], // Запечатка фона (4+4)
+						[1.9, 1.81, 1.62, 1.54, 1.47, 1.41, 1.36, 1.31, 1.27, 1.25, 1.23, 1.21, 1.19, 1.18, 1.16, 1.14, 1.13, 1.11, 1.1] // Скругление углов
+					]
+				];
+				const table_350 = [
+					[
+						// Визитки Soft touch 90*50 - стандарт
+						[100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[11.86, 11.03, 9.93, 9.43, 8.96, 8.62, 8.3, 7.99, 7.67, 7.44, 7.24, 7.07, 6.92, 6.79, 6.7, 6.64, 6.59, 6.56, 6.55], // Односторонние цветные (4+0)
+						[12.62, 11.74, 10.56, 10.03, 9.53, 9.17, 8.83, 8.5, 8.21, 7.96, 7.75, 7.56, 7.4, 7.27, 7.17, 7.1, 7.05, 7.02, 7], // Двусторонние цветные (4+4)
+						[12.98, 12.07, 10.86, 10.32, 9.8, 9.43, 9.08, 8.75, 8.44, 8.19, 7.97, 7.78, 7.61, 7.48, 7.37, 7.3, 7.25, 7.22, 7.2], // Запечатка фона (4+0)
+						[13.54, 12.59, 11.33, 10.77, 10.23, 9.84, 9.48, 9.12, 8.81, 8.54, 8.31, 8.11, 7.94, 7.8, 7.69, 7.62, 7.57, 7.53, 7.51], // Запечатка фона (4+4)
+						[1.9, 1.81, 1.62, 1.54, 1.47, 1.41, 1.36, 1.31, 1.27, 1.25, 1.23, 1.21, 1.19, 1.18, 1.16, 1.14, 1.13, 1.11, 1.1], // Скругление углов
+					],
+					[
+						// Визитки Soft touch 85*55 - евро
+						[100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[12.2, 11.35, 10.44, 9.92, 9.42, 9.06, 8.73, 8.4, 8.07, 7.83, 7.61, 7.43, 7.28, 7.15, 7.05, 6.98, 6.93, 6.9, 6.88], // Односторонние цветные (4+0)
+						[13.05, 12.14, 11.17, 10.61, 10.08, 9.69, 9.34, 8.99, 8.68, 8.42, 8.19, 7.99, 7.82, 7.68, 7.58, 7.51, 7.45, 7.42, 7.4], // Двусторонние цветные (4+4)
+						[13.33, 12.4, 11.41, 10.83, 10.29, 9.9, 9.54, 9.18, 8.86, 8.6, 8.36, 8.16, 7.99, 7.85, 7.74, 7.67, 7.61, 7.58, 7.56], // Запечатка фона (4+0)
+						[14.02, 13.04, 12, 11.4, 10.83, 10.41, 10.03, 9.66, 9.32, 9.04, 8.8, 8.59, 8.41, 8.25, 8.14, 8.06, 8.01, 7.97, 7.95], // Запечатка фона (4+4)
+						[1.9, 1.81, 1.66, 1.58, 1.5, 1.44, 1.39, 1.34, 1.3, 1.27, 1.26, 1.24, 1.22, 1.2, 1.19, 1.17, 1.15, 1.14, 1.12], // Скругление углов
+					]
+				];
+
+				let table = table_300;
+				let size = 0;
+				let row = 1;
+				let column = 0;
+				let numberOfSets = 1;
+				let rangeVal = 100;
+				let roundedCorners = false;
+
+				// eventListeners
+				$("#rec176001712").off('change');
+				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
+				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+
+				$('[data-input-lid="1594789704972"] .t-radio__wrapper').change(function () { // Бумага
+					if ($('[data-input-lid="1594789704972"] .t-radio:eq(0)').prop('checked')) {
+						table = table_300;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1594789704972"] .t-radio:eq(1)').prop(
+						'checked')) {
+							table = table_350;
+						updateFinalPrice();
+					}
+				});
+
+				$('[data-input-lid="1584868125487"] .t-radio__wrapper').change(function () { // размер
+					if ($('[data-input-lid="1584868125487"] .t-radio:eq(0)').prop('checked')) {
+						size = 0;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1584868125487"] .t-radio:eq(1)').prop(
+						'checked')) {
+						size = 1;
+						updateFinalPrice();
+					}
+				});
+
+				$('[data-input-lid="1584868178894"] .t-radio__wrapper').change(function () { // цветность
+					$('[data-input-lid="1584868178894"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							row = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
+					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
+					for (let index = 0; index < table[size][0].length; index++) {
+						if (rangeVal < 0 || !parseInt(rangeVal)) {
+							$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val('');
+							break;
+						} else if (rangeVal <= table[size][0][index]) {
+							column = index;
+							break;
+						} else if (rangeVal > table[size][0][table[size][0].length - 1]) {
+							column = table[size][0].length - 1;
+							break;
+						}
+					}
+					updateFinalPrice();
+				});
+
+				$('[data-input-lid="1585849157154"] .t-input.js-tilda-rule').keyup(function () { // кол-во комплектов
+					numberOfSets = $('[data-input-lid="1585849157154"] .t-input.js-tilda-rule').val();
+					if(timeTitle != '00 : 00 : 00 : 00'){ numberOfSets = numberOfSets - Math.trunc((numberOfSets/3)) }; // акция каждый 3 бесплатно
+					if (numberOfSets < 0 || !parseInt(numberOfSets) || isNaN(numberOfSets)) {
+						$('[data-input-lid="1585849157154"] .t-input.js-tilda-rule').val('');
+						numberOfSets = 1;
+					}
+					updateFinalPrice();
+				});
+
+				$('[data-input-lid="1587736385407"] .t-checkboxes__wrapper').change(function () { // допы
+					if ($(
+							'[data-input-lid="1587736385407"] .t-checkboxes__wrapper [value="Скругление углов"]')
+						.prop('checked')) {
+						roundedCorners = $(
+							'[data-input-lid="1587736385407"] .t-checkboxes__wrapper [value="Скругление углов"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						roundedCorners = $(
+							'[data-input-lid="1587736385407"] .t-checkboxes__wrapper [value="Скругление углов"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+				});
+
+				setInterval(updateFinalPrice, 100);
+			}, 1000);
+		} catch (err) {}
+	});
+</script>

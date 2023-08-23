@@ -1,0 +1,325 @@
+<!-- Визитки офсетом на мелованном картоне в типографии ФиПС -->
+
+<style>
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		height: 40px;
+		border-radius: 5px;
+	}
+
+	.t-form__screen .t-form__errorbox-wrapper {
+		clear: both;
+	}
+
+	.t-form__inputsbox.t-form__screen {
+		background-color: #fff;
+		padding: 20px;
+	}
+
+	.t-form__screen .t-upwidget-container__button {
+		background-color: #44647d !important;
+	}
+
+	.t-form__screen .t-input-group_fr {
+		text-align: right;
+	}
+
+	.t-form__screen .t-form__submit {
+		margin: 30px 0 0;
+	}
+
+	.t-form__screen .t-input-group {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		margin: 0;
+		width: 20%;
+		min-width: 200px;
+	}
+
+	.t-form__screen .t-input-title {
+		width: 100%;
+		height: auto;
+	}
+
+	.t-form__screen-wrapper.t-form__screen-wrapper_active {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_fr {
+		text-align: right;
+		justify-content: flex-end;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+		width: 50%;
+		align-content: flex-end;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_tx {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		width: 90%;
+	}
+
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_cb, 
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_uw {
+    width: 10%;
+    min-width: 290px;
+    margin-bottom: 0;
+}
+
+	.t-form__screen .t-input-group_ph,
+	.t-form__screen .t-input-group_sb,
+	.t-form__screen .t-input-group_in,
+	.t-form__screen .t-input-group_em,
+	.t-form__screen .t-input-group_nm,
+	.t-form__screen .t-input-group_uw {
+		width: 50%;
+		margin-right: 0;
+	}
+
+	.t-form__screen .t-input-group_in[data-input-lid="1584868297796"] {
+		width: 20%;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper {
+		width: 50%;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+		position: relative;
+		top: 10px;
+		left: -80px;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_cb .t-text_xs {
+		font-size: 15px;
+	}
+
+	.t-form__screen .t-form__submit .t-form__screen-btn-next {
+    	padding: 0 30px 0 10px;
+	}
+	.t-form__screen .t-form__submit .t-form__screen-btn-prev {
+		padding: 0 10px 0 30px;
+	}
+	.t-form__screen .t-form__submit .t-submit{
+		padding: 0 10px;
+	}
+	.t-form__screen .t-input-group{
+		margin-bottom: 25px;	
+	}
+	.t-form__screen .t-select__wrapper:after{
+		right: 70px;
+	}
+
+	@media screen and (max-width: 700px) {
+		.t-form__screen .t-input-group.t-input-group_fr {
+			text-align: center;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_ph,
+		.t-form__screen .t-input-group_sb,
+		.t-form__screen .t-input-group_in,
+		.t-form__screen .t-input-group_em,
+		.t-form__screen .t-input-group_nm,
+		.t-form__screen .t-input-group_uw {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.t-form__screen-wrapper.t-form__screen-wrapper_active {
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_uw {
+			text-align: center;
+		}
+
+		.t-form__screen .t-input-group_uw .t-input-block {
+			display: flex;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+			width: 100%;
+		}
+
+		.t-form__screen .t-form__screen-btn-prev {
+			margin-right: 0;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper {
+			justify-content: center;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-block {
+			width: auto;
+			display: flex;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+			position: inherit;
+			justify-content: center;
+			margin: 10px 0 15px;
+		}
+	}
+	@media screen and (max-width: 460px){
+		.t-form__screen .t-form__submit > .t-form__screen-btn-prev {
+			margin-bottom: 15px;
+			padding: 10px;
+		}
+		.t-form__screen .t-select__wrapper:after {
+			right: 40px;
+		}
+	}
+</style>
+<script>
+	$(document).ready(function () {
+
+		try {
+			setTimeout(function () {
+				$('.t-form__screen-current-view').remove();
+				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
+
+				function updateFinalPrice() {
+
+					let final_price = Math.floor(table[row][column] * numberOfSets);
+
+					if (roundedCorners) {
+						final_price += Math.floor(table[2][column] * numberOfSets);
+					}
+
+					if (lamination) {
+						final_price += Math.floor(table[3][column] * numberOfSets);
+					}
+
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+				}
+
+				//определение переменных
+
+				const table_standart = [
+					[3099, 4011, 5975, 8563, 15077], // Односторонние цветные (4+0)
+					[3495, 4532, 6753, 9671, 17039], // Двусторонние цветные (4+4)
+					[350, 675, 1014, 1688, 3379], // Скругление углов
+					[1691, 1744, 2781, 4847, 8188], // Ламинация 1+1 глянец
+				];
+				const table_euro = [
+					[2953, 3871, 5705, 8083, 14392], // Односторонние цветные (4+0)
+					[3338, 4325, 6442, 9236, 16263], // Двусторонние цветные (4+4)
+					[350, 675, 1014, 1688, 3379], // Скругление углов
+					[1691, 1744, 2781, 4847, 8188], // Ламинация 1+1 глянец
+				];
+				let table = table_standart;
+				let row = 0;
+				let column = 0;
+				let numberOfSets = 1;
+				let roundedCorners = false;
+				let lamination = false;
+
+				// eventListeners
+				$("#rec176012788").off('change');
+				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
+				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+
+				$('[data-input-lid="1584868125487"] .t-radio__wrapper').change(function () { // размер
+					if ($('[data-input-lid="1584868125487"] .t-radio:eq(0)').prop('checked')) {
+						table = table_standart;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1584868125487"] .t-radio:eq(1)').prop(
+						'checked')) {
+						table = table_euro;
+						updateFinalPrice();
+					}
+				});
+
+				$('[data-input-lid="1584868178894"] .t-radio__wrapper').change(function () { // цветность
+					$('[data-input-lid="1584868178894"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							row = index;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584868297796"] .t-radio__wrapper').change(function () { // тираж
+					$('[data-input-lid="1584868297796"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							column = index;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1587743472660"] .t-checkboxes__wrapper').change(function () { // допы
+					if ($(
+							'[data-input-lid="1587743472660"] .t-checkboxes__wrapper [value="Скругление углов"]')
+						.prop('checked')) {
+						roundedCorners = $(
+							'[data-input-lid="1587743472660"] .t-checkboxes__wrapper [value="Скругление углов"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						roundedCorners = $(
+							'[data-input-lid="1587743472660"] .t-checkboxes__wrapper [value="Скругление углов"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+
+					if ($(
+							'[data-input-lid="1587743472660"] .t-checkboxes__wrapper [value="Ламинация"]')
+						.prop('checked')) {
+						lamination = $(
+							'[data-input-lid="1587743472660"] .t-checkboxes__wrapper [value="Ламинация"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						lamination = $(
+							'[data-input-lid="1587743472660"] .t-checkboxes__wrapper [value="Ламинация"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+				});
+
+				setInterval(updateFinalPrice, 100);
+			}, 1000);
+		} catch (err) {}
+	});
+</script>
