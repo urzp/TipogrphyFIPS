@@ -1,0 +1,462 @@
+<style>
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		height: 40px;
+		border-radius: 5px;
+	}
+
+	.t-form__screen .t-form__errorbox-wrapper {
+		clear: both;
+	}
+
+	.t-form__inputsbox.t-form__screen {
+		background-color: #fff;
+		padding: 20px;
+	}
+
+	.t-form__screen .t-upwidget-container__button {
+		background-color: #44647d !important;
+	}
+
+	.t-form__screen .t-input-group_fr {
+		text-align: right;
+	}
+
+	.t-form__screen .t-form__submit {
+		margin: 30px 0 0;
+	}
+
+	.t-form__screen .t-input-group {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		margin: 0;
+		width: 20%;
+		min-width: 200px;
+	}
+
+	.t-form__screen .t-input-title {
+		width: 100%;
+		height: auto;
+	}
+
+	.t-form__screen-wrapper.t-form__screen-wrapper_active {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_fr {
+		text-align: right;
+		justify-content: flex-end;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+		width: 50%;
+		align-content: flex-end;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_tx {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		width: 90%;
+	}
+
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_cb, 
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_uw {
+    width: 10%;
+    min-width: 290px;
+    margin-bottom: 0;
+}
+
+	.t-form__screen .t-input-group_ph,
+	.t-form__screen .t-input-group_sb,
+	.t-form__screen .t-input-group_in,
+	.t-form__screen .t-input-group_em,
+	.t-form__screen .t-input-group_nm,
+	.t-form__screen .t-input-group_uw {
+		width: 50%;
+		margin-right: 0;
+	}
+
+	.t-form__screen .t-input-group_in[data-input-lid="1584868297796"] {
+		width: 20%;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper {
+		width: 50%;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+		position: relative;
+		top: 10px;
+		left: -80px;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_cb .t-text_xs {
+		font-size: 15px;
+	}
+
+	.t-form__screen .t-form__submit .t-form__screen-btn-next {
+    	padding: 0 30px 0 10px;
+	}
+	.t-form__screen .t-form__submit .t-form__screen-btn-prev {
+		padding: 0 10px 0 30px;
+	}
+	.t-form__screen .t-form__submit .t-submit{
+		padding: 0 10px;
+	}
+	.t-form__screen .t-input-group{
+		margin-bottom: 25px;	
+	}
+	.t-form__screen .t-select__wrapper:after{
+		right: 70px;
+	}
+
+	@media screen and (max-width: 700px) {
+		.t-form__screen .t-input-group.t-input-group_fr {
+			text-align: center;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_ph,
+		.t-form__screen .t-input-group_sb,
+		.t-form__screen .t-input-group_in,
+		.t-form__screen .t-input-group_em,
+		.t-form__screen .t-input-group_nm,
+		.t-form__screen .t-input-group_uw {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.t-form__screen-wrapper.t-form__screen-wrapper_active {
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_uw {
+			text-align: center;
+		}
+
+		.t-form__screen .t-input-group_uw .t-input-block {
+			display: flex;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+			width: 100%;
+		}
+
+		.t-form__screen .t-form__screen-btn-prev {
+			margin-right: 0;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper {
+			justify-content: center;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-block {
+			width: auto;
+			display: flex;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+			position: inherit;
+			justify-content: center;
+			margin: 10px 0 15px;
+		}
+	}
+</style>
+<script>
+	$(document).ready(function () {
+        $('.t-checkboxes__wrapper [value="Скругление углов"]').parent().css("display", "none");// убираем пункт ламинация (решение директора) 
+		try {
+			setTimeout(function () {
+				//определение переменных
+				const table_A5 = [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[86.7, 81.5, 75.8, 70.49, 65.91, 61.95, 58.86, 56.8, 55.94, 55.38, 55.11], // Блок без печати (0+0)
+					[164.22, 123.24, 114.61, 106.59, 99.66, 93.68, 89, 85.88, 84.59, 83.75, 83.33], // Блок с ч/б печатью (1+0)
+					[255.3, 175.26, 162.99, 151.58, 141.73, 133.23, 126.56, 122.13, 120.3, 119.1, 118.5], // Блок с цветной печатью (4+0)
+					[23, 21.85, 20.1, 18.49, 17.01, 15.65, 14.4, 13.25, 12.19, 11.21, 10.32], // Скругление углов
+					[5, 4.75, 3, 3, 3, 3, 3, 3, 3, 3, 3] // Пружинка по длинной стороне
+				];
+				const table_A5_lamination = [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[10.25, 9.53, 8.87, 8.24, 7.67, 7.13, 6.63, 6.17, 5.74, 5.33, 4.96], // Ламинация обложки (1+1) гл
+					[10.76, 10.01, 9.31, 8.65, 8.05, 7.49, 6.96, 6.47, 6.02, 5.6, 5.21], // ламинация обложки (1+1) мат
+					[10.25, 9.53, 8.87, 8.24, 7.67, 7.13, 6.63, 6.17, 5.74, 5.33, 4.96], // Ламинация подложки (1+1) гл.
+					[10.75, 10, 9.3, 8.65, 8.04, 7.48, 6.96, 6.47, 6.02, 5.59, 5.2], // Ламинация подложки (1+1) мат
+				];
+				const table_A6 = [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[66.53, 52.13, 48.48, 45.09, 42.16, 39.63, 37.65, 36.33, 35.78, 35.43, 35.25], // Блок без печати (0+0)
+					[136.34, 96.47, 89.72, 83.44, 78.01, 73.33, 69.67, 67.23, 66.22, 65.56, 65.23], // Блок с ч/б печатью (1+0)
+					[156.77, 112.74, 104.85, 97.51, 91.17, 85.7, 81.42, 78.57, 77.39, 76.61, 76.23], // Блок с цветной печатью (4+0)
+					[23, 21.85, 20.1, 18.49, 17.01, 15.65, 14.4, 13.25, 12.19, 11.21, 10.32], // Скругление углов
+					[4, 3.8, 3, 3, 3, 3, 3, 3, 3, 3, 3] // Пружинка по длинной стороне
+				];
+				const table_A6_lamination = [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[5.7, 5.3, 4.93, 4.58, 4.26, 3.97, 3.69, 3.43, 3.19, 2.97, 2.76], // Ламинация обложки (1+1) гл
+					[6.02, 5.6, 5.21, 4.84, 4.5, 4.19, 3.89, 3.62, 3.37, 3.13, 2.91], // ламинация обложки (1+1) мат
+					[5.7, 5.3, 4.93, 4.58, 4.26, 3.97, 3.69, 3.43, 3.19, 2.97, 2.76], // Ламинация подложки (1+1) гл.
+					[6, 5.58, 5.19, 4.83, 4.49, 4.17, 3.88, 3.61, 3.36, 3.12, 2.9], // Ламинация подложки (1+1) мат
+				];
+				const table_A4 = [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[148.32, 119, 110.67, 102.92, 96.23, 90.46, 85.94, 82.93, 81.68, 80.87, 80.46], // Блок без печати (0+0)
+					[229.36, 184, 171.12, 159.14, 148.8, 139.87, 132.88, 128.23, 126.3, 125.04, 124.41], // Блок с ч/б печатью (1+0)
+					[326.23, 247, 229.71, 213.63, 199.74, 187.76, 178.37, 172.13, 169.55, 167.85, 167.01], // Блок с цветной печатью (4+0)
+					[24, 22.8, 20.98, 19.3, 17.75, 16.33, 15.03, 13.82, 12.72, 11.7, 10.77], // Скругление углов
+					[6, 5.7, 4, 4, 4, 4, 4, 4, 4, 4, 4], // Пружинка по длинной стороне
+				];
+				const table_A4_lamination = [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[19.48, 18.12, 16.85, 15.67, 14.57, 13.55, 12.6, 11.72, 10.9, 10.14, 9.43], // Ламинация обложки (1+1) гл
+					[20.5, 19.07, 17.73, 16.49, 15.34, 14.26, 13.26, 12.33, 11.47, 10.67, 9.92], // ламинация обложки (1+1) мат
+					[19.48, 18.12, 16.85, 15.67, 14.57, 13.55, 12.6, 11.72, 10.9, 10.14, 9.43], // Ламинация подложки (1+1) гл.
+					[20.49, 19.06, 17.72, 16.48, 15.33, 14.25, 13.26, 12.33, 11.47, 10.66, 9.92], // Ламинация подложки (1+1) мат
+				];
+				const laminationCoverCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация обложки"]');
+				const laminationCoverLabel = laminationCoverCheckbox.parent();
+				const laminationCoverTypeWrapper = $('[data-input-lid="1592547821574"]');
+				const laminationCoverTypeRadio = laminationCoverTypeWrapper.find('.t-radio');
+
+				const laminationUndercoverCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация подложки"]');
+				const laminationUndercoverLabel = laminationUndercoverCheckbox.parent();
+				const laminationUndercoverTypeWrapper = $('[data-input-lid="1592547862207"]');
+				const laminationUndercoverTypeRadio = laminationUndercoverTypeWrapper.find('.t-radio');
+
+				const laminationCheckboxes = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация обложки"], [data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация подложки"]');
+				let table = table_A6;
+				let table_lamination = table_A6_lamination;
+				let row = 1;
+				let column = 0;
+				let numberOfSets = 1;
+				let rangeVal = 50;
+				let cover_lamination = false;
+				let undercover_lamination = false;
+				let roundedCorners = false;
+				let spring = false;
+				let cover_lamination_type = 0;
+				let undercover_lamination_type = 0;
+
+				// модификация элементов страницы
+				$('.t-form__screen-current-view').remove();
+				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
+				laminationCoverTypeWrapper.css('padding-left', '30px');
+				laminationCoverTypeWrapper.detach();
+				laminationUndercoverTypeWrapper.css('padding-left', '30px');
+				laminationUndercoverTypeWrapper.detach();
+
+				// eventListeners
+				$("#rec184626883").off('change');
+				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
+				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+
+				// основной скрипт калькулятора
+				function updateFinalPrice() {
+					
+					if (column == 0) {
+						rangeVal = 50;
+					}
+
+					let final_price = Math.floor(table[row][column] * Math.ceil(rangeVal / 25) * 25 * numberOfSets);
+
+					if (cover_lamination) {
+						final_price += Math.floor(table_lamination[1 + cover_lamination_type][column] * Math.ceil(rangeVal / 25) * 25 * numberOfSets);
+					}
+
+					if (undercover_lamination) {
+						final_price += Math.floor(table_lamination[3 + undercover_lamination_type][column] * Math.ceil(rangeVal / 25) * 25 * numberOfSets);
+					}
+
+					if (roundedCorners) {
+						final_price += Math.floor(table[4][column] * Math.ceil(rangeVal / 25) * 25 * numberOfSets);
+					}
+
+					if (spring) {
+						final_price += Math.floor(table[5][column] * Math.ceil(rangeVal / 25) * 25 * numberOfSets);
+					}
+
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+				}
+
+
+
+				$('[data-input-lid="1584868125487"] .t-radio__wrapper').change(function () { // размер
+					if ($('[data-input-lid="1584868125487"] .t-radio:eq(0)').prop('checked')) {
+						table = table_A6;
+						table_lamination = table_A6_lamination;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1584868125487"] .t-radio:eq(1)').prop(
+						'checked')) {
+						table = table_A5;
+						table_lamination = table_A5_lamination;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1584868125487"] .t-radio:eq(2)').prop(
+						'checked')) {
+						table = table_A4;
+						table_lamination = table_A4_lamination;
+						updateFinalPrice();
+					}
+				});
+
+				$('[data-input-lid="1584868178894"] .t-radio__wrapper').change(function () { // цветность
+					$('[data-input-lid="1584868178894"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							row = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
+					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
+					for (let index = 0; index < table[0].length; index++) {
+						if (rangeVal < 0 || !parseInt(rangeVal)) {
+							$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val('');
+							break;
+						} else if (rangeVal <= table[0][index]) {
+							column = index;
+							break;
+						} else if (rangeVal > table[0][table[0].length - 1]) {
+							column = table[0].length - 1;
+							break;
+						}
+					}
+					updateFinalPrice();
+				});
+
+				$('[data-input-lid="1585845219300"] .t-radio__wrapper').change(function () { // кол-во комплектов
+					$('[data-input-lid="1585845219300"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							numberOfSets = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584971819844"] .t-checkboxes__wrapper').change(function () { // допы
+
+					if ($(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Скругление углов"]')
+						.prop('checked')) {
+						roundedCorners = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Скругление углов"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						roundedCorners = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Скругление углов"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+
+					if ($(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Пружинка по длинной стороне"]')
+						.prop('checked')) {
+						spring = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Пружинка по длинной стороне"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						spring = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Пружинка по длинной стороне"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+				});
+
+				laminationCheckboxes.click(function(){
+					if (laminationCoverCheckbox.prop('checked')) {
+						laminationCoverLabel.after(laminationCoverTypeWrapper);
+						if(!laminationCoverTypeRadio.is(':checked')){
+							laminationCoverTypeRadio.first().prop('checked', true);
+							cover_lamination_type = 0;
+						}
+						cover_lamination = true;
+						updateFinalPrice();
+					} else {
+						laminationCoverTypeRadio.each(function(index, element){
+							$(element).prop('checked', false);
+						});
+						laminationCoverTypeWrapper.detach();
+						cover_lamination = false;
+						updateFinalPrice();
+					}
+
+					if (laminationUndercoverCheckbox.prop('checked')) {
+						laminationUndercoverLabel.after(laminationUndercoverTypeWrapper);
+						if(!laminationUndercoverTypeRadio.is(':checked')){
+							laminationUndercoverTypeRadio.first().prop('checked', true);
+							undercover_lamination_type = 0;
+						}
+						undercover_lamination = true;
+						updateFinalPrice();
+					} else {
+						laminationUndercoverTypeRadio.each(function(index, element){
+							$(element).prop('checked', false);
+						});
+						laminationUndercoverTypeWrapper.detach();
+						undercover_lamination = false;
+						updateFinalPrice();
+					}
+				});
+
+				laminationCoverTypeWrapper.find('.t-radio__wrapper').change(function(){
+					laminationCoverTypeRadio.each(function(index, element){
+						if ($(element).prop('checked')) {
+							cover_lamination_type = +index;
+						}
+					});
+					updateFinalPrice();
+				});
+
+				laminationUndercoverTypeWrapper.find('.t-radio__wrapper').change(function(){
+					laminationUndercoverTypeRadio.each(function(index, element){
+						if ($(element).prop('checked')) {
+							undercover_lamination_type = +index;
+						}
+					});
+					updateFinalPrice();
+				});
+
+				setInterval(updateFinalPrice, 100);
+			}, 600);
+		} catch (err) {}
+	});
+</script>
