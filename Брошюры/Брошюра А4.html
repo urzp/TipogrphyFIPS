@@ -1,0 +1,405 @@
+<style>
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		height: 40px;
+		border-radius: 5px;
+	}
+
+	.t-form__screen .t-form__errorbox-wrapper {
+		clear: both;
+	}
+
+	.t-form__inputsbox.t-form__screen {
+		background-color: #fff;
+		padding: 20px;
+	}
+
+	.t-form__screen .t-upwidget-container__button {
+		background-color: #44647d !important;
+	}
+
+	.t-form__screen .t-input-group_fr {
+		text-align: right;
+	}
+
+	.t-form__screen .t-form__submit {
+		margin: 30px 0 0;
+	}
+
+	.t-form__screen .t-input-group {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		margin: 0;
+		width: 20%;
+		min-width: 200px;
+	}
+
+	.t-form__screen .t-input-title {
+		width: 100%;
+		height: auto;
+	}
+
+	.t-form__screen-wrapper.t-form__screen-wrapper_active {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_fr {
+		text-align: right;
+		justify-content: flex-end;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+		width: 50%;
+		align-content: flex-end;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_tx {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		width: 90%;
+	}
+
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_cb, 
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_uw {
+    width: 10%;
+    min-width: 290px;
+    margin-bottom: 0;
+}
+
+	.t-form__screen .t-input-group_ph,
+	.t-form__screen .t-input-group_sb,
+	.t-form__screen .t-input-group_in,
+	.t-form__screen .t-input-group_em,
+	.t-form__screen .t-input-group_nm,
+	.t-form__screen .t-input-group_uw {
+		width: 50%;
+		margin-right: 0;
+	}
+
+	.t-form__screen .t-input-group_in[data-input-lid="1584868297796"] {
+		width: 20%;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper {
+		width: 50%;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+		position: relative;
+		top: 10px;
+		left: -80px;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_cb .t-text_xs {
+		font-size: 15px;
+	}
+
+	.t-form__screen .t-form__submit .t-form__screen-btn-next {
+    	padding: 0 30px 0 10px;
+	}
+	.t-form__screen .t-form__submit .t-form__screen-btn-prev {
+		padding: 0 10px 0 30px;
+	}
+	.t-form__screen .t-form__submit .t-submit{
+		padding: 0 10px;
+	}
+	.t-form__screen .t-input-group{
+		margin-bottom: 25px;	
+	}
+	.t-form__screen .t-select__wrapper:after{
+		right: 70px;
+	}
+
+	@media screen and (max-width: 700px) {
+		.t-form__screen .t-input-group.t-input-group_fr {
+			text-align: center;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_ph,
+		.t-form__screen .t-input-group_sb,
+		.t-form__screen .t-input-group_in,
+		.t-form__screen .t-input-group_em,
+		.t-form__screen .t-input-group_nm,
+		.t-form__screen .t-input-group_uw {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.t-form__screen-wrapper.t-form__screen-wrapper_active {
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_uw {
+			text-align: center;
+		}
+
+		.t-form__screen .t-input-group_uw .t-input-block {
+			display: flex;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+			width: 100%;
+		}
+
+		.t-form__screen .t-form__screen-btn-prev {
+			margin-right: 0;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper {
+			justify-content: center;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-block {
+			width: auto;
+			display: flex;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+			position: inherit;
+			justify-content: center;
+			margin: 10px 0 15px;
+		}
+	}
+	@media screen and (max-width: 460px){
+		.t-form__screen .t-form__submit > .t-form__screen-btn-prev {
+			margin-bottom: 15px;
+			padding: 10px;
+		}
+		.t-form__screen .t-select__wrapper:after {
+			right: 40px;
+		}
+	}
+</style>
+<script>
+	$(document).ready(function () {
+
+		try {
+			setTimeout(function () {
+				//определение переменных
+				const table_a5 = [
+                [ // Брошюра А5_меловка 
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[54.34, 43.2, 41.04, 38.99, 37.43, 36.31, 35.4, 34.69, 34.17, 33.83, 33.66], // 8 полос с обложкой
+					[72.45, 59.83, 56.84, 54, 51.84, 50.28, 49.02, 48.04, 47.32, 46.85, 46.62], // 12 полос с обложкой
+					[90.56, 83.76, 79.57, 75.59, 72.57, 70.39, 68.63, 67.26, 66.25, 65.59, 65.26], // 16 полос с обложкой
+					[132.83, 125.74, 119.45, 113.48, 108.94, 105.67, 103.03, 100.97, 99.46, 98.46, 97.97], // 20 полос с обложкой
+					[150.94, 142.42, 135.3, 128.53, 123.39, 119.69, 116.7, 114.36, 112.65, 111.52, 110.97], // 24 полос с обложкой
+					[169.05, 157.3, 149.44, 141.96, 136.28, 132.2, 128.89, 126.31, 124.42, 123.17, 122.56], // 28 полос с обложкой
+					[187.2, 172.14, 163.53, 155.36, 149.14, 144.67, 141.05, 138.23, 136.16, 134.8, 134.12], // 32 полос с обложкой
+					[199.24, 187, 177.65, 168.77, 162.02, 157.16, 153.23, 150.16, 147.91, 146.43, 145.7] // 36 полос с обложкой
+				],
+				[ // Брошюра А5_колоркопи
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[58.6, 46.25, 43.94, 41.74, 40.07, 38.87, 37.9, 37.14, 36.58, 36.22, 36.04], // 8 полос с обложкой
+					[77.52, 64.02, 60.82, 57.78, 55.47, 53.8, 52.46, 51.41, 50.64, 50.13, 49.88], // 12 полос с обложкой
+					[97.65, 89.63, 85.15, 80.89, 77.66, 75.33, 73.44, 71.97, 70.89, 70.19, 69.83], // 16 полос с обложкой
+					[142.13, 134.54, 127.81, 121.42, 116.57, 113.07, 110.24, 108.04, 106.42, 105.35, 104.83], // 20 полос с обложкой
+					[161.51, 152.4, 144.78, 137.54, 132.04, 128.08, 124.88, 122.38, 120.54, 119.34, 118.74], // 24 полос с обложкой
+					[180.92, 168.3, 159.89, 151.89, 145.82, 141.44, 137.9, 135.15, 133.12, 131.79, 131.13], // 28 полос с обложкой
+					[200.27, 184.2, 174.99, 166.24, 159.59, 154.8, 150.93, 147.91, 145.7, 144.24, 143.52], // 32 полос с обложкой
+					[213.2, 200.08, 190.08, 180.57, 173.35, 168.15, 163.95, 160.67, 158.26, 156.67, 155.89] // 36 полос с обложкой
+				],
+                [ // ламинация
+                    [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[18, 15, 14.48, 13.97, 13.48, 13.01, 12.55, 12.11, 11.69, 11.28, 11.17], // Глянцевая
+					[20.4, 17, 16.41, 15.83, 15.28, 14.74, 14.23, 13.73, 13.25, 12.78, 12.66], // Матовая
+					[27.6, 23, 22.2, 21.42, 20.67, 19.95, 19.25, 18.57, 17.92, 17.3, 17.12], // Soft touch
+                ]];
+                const table_a4 = [
+                [ // Брошюра А4_меловка 
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[94.5, 75.1, 71.35, 67.78, 65.07, 63.11, 61.54, 60.31, 59.4, 58.81, 58.51], // 8 полос с обложкой
+					[126, 104.1, 98.9, 93.95, 90.19, 87.49, 85.3, 83.59, 82.34, 81.52, 81.11], // 12 полос с обложкой
+					[157.5, 145.68, 138.4, 131.48, 126.22, 122.43, 119.37, 116.98, 115.23, 114.08, 113.51], // 16 полос с обложкой
+					[231, 218.67, 207.74, 197.35, 189.46, 183.77, 179.18, 175.59, 172.96, 171.23, 170.37], // 20 полос с обложкой
+					[262.5, 247.7, 235.32, 223.55, 214.61, 208.17, 202.96, 198.91, 195.92, 193.96, 192.99], // 24 полос с обложкой
+					[294, 273.56, 259.88, 246.89, 237.01, 229.9, 224.15, 219.67, 216.38, 214.21, 213.14], // 28 полос с обложкой
+					[325.5, 299.38, 284.41, 270.19, 259.38, 251.6, 245.31, 240.41, 236.8, 234.43, 233.26], // 32 полос с обложкой
+					[346.5, 325.2, 308.94, 293.49, 281.75, 273.3, 266.47, 261.14, 257.22, 254.65, 253.38], // 36 полос с обложкой
+				],
+                [ // Брошюра А4_колоркопи
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[129.32, 122.85, 116.71, 110.88, 106.44, 103.25, 100.67, 98.65, 97.17, 96.20, 95.72], // 8 полос с обложкой
+					[135, 111.4, 105.83, 100.54, 96.52, 93.62, 91.28, 89.46, 88.11, 87.23, 86.8], // 12 полос с обложкой
+					[169, 156, 148.2, 140.79, 135.16, 131.1, 127.83, 125.27, 123.39, 122.16, 121.55], // 16 полос с обложкой
+					[147.2, 233.97, 222.27, 211.16, 202.71, 196.63, 191.71, 187.88, 185.06, 183.21, 182.3], // 20 полос с обложкой
+					[281, 264.04, 250.84, 238.3, 228.76, 221.9, 216.35, 212.03, 208.85, 206.76, 205.72], // 24 полос с обложкой
+					[315, 292.7, 278.07, 264.16, 253.6, 245.99, 239.84, 235.04, 231.52, 229.2, 228.05], // 28 полос с обложкой
+					[348.3, 320.34, 304.32, 289.11, 277.54, 269.22, 262.49, 257.24, 253.38, 250.84, 249.59], // 32 полос с обложкой
+					[371, 348, 330.6, 314.07, 301.51, 292.46, 285.15, 279.45, 275.26, 272.5, 271.14] // 36 полос с обложкой
+				],
+                [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550], // Цветность\Количество
+					[30.6, 25.5, 24.61, 23.75, 22.92, 22.11, 21.34, 20.59, 19.87, 19.18, 18.98], // Глянцевая
+					[35.52, 29.6, 28.56, 27.56, 26.6, 25.67, 24.77, 23.9, 23.07, 22.26, 22.04], // Матовая
+					[51.6, 43, 41.5, 40.04, 38.64, 37.29, 35.98, 34.72, 33.51, 32.34, 32.01], // Soft touch
+				]];
+				const coverLaminationCheckbox = $('[data-input-lid="1592427443629"] .t-checkboxes__wrapper [value="Ламинация обложки"]');
+				const coverLaminationLabel = coverLaminationCheckbox.parent();
+				const coverLaminationRadioWrapper = $('[data-input-lid="1592427484534"]');
+				const coverLaminationRadio = coverLaminationRadioWrapper.find('.t-radio');
+				let type = 0;
+                let table = table_a4;
+				let row = 1;
+				let column = 0;
+				let numberOfSets = 1;
+				let coverLamination = false;
+				let lamination_row = 1;
+				let rangeVal = 50;
+
+				// модификация элементов страницы
+				$('.t-form__screen-current-view').remove();
+				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
+                $('[data-input-lid="1584868178894"], [data-input-lid="1584868297796"]').wrapAll('<div class="t-input-group">');
+				coverLaminationRadioWrapper.detach();
+				coverLaminationRadioWrapper.appendTo('[data-input-lid="1592427443629"]');
+				coverLaminationRadioWrapper.css('padding-left', '30px');
+				coverLaminationRadioWrapper.hide();
+
+				// eventListeners
+				$("#rec181417530").off('change');
+				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
+				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+
+				// основной скрипт калькулятора
+				function updateFinalPrice() {
+
+					if (column == 0) {
+						rangeVal = 50;
+					}
+					let final_price = Math.floor(table[type][row][column] * Math.ceil(rangeVal / 25) * 25 * numberOfSets);
+
+					if (coverLamination) {
+						final_price += Math.floor(table[2][lamination_row][column] * Math.ceil(rangeVal / 25) * 25 * numberOfSets);
+					}
+
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
+					$('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+				}
+
+                $('[data-input-lid="1638382723252"] .t-radio__wrapper').change(function (e) { // размер
+                    console.log(e.target);
+					if ($('[data-input-lid="1638382723252"] .t-radio:eq(0)').prop('checked')) {
+						table = table_a4;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1638382723252"] .t-radio:eq(1)').prop(
+						'checked')) {
+						table = table_a5;
+						updateFinalPrice();
+					}
+				});
+
+				$('[data-input-lid="1584868178894"] .t-radio__wrapper').change(function () { // вид бумаги
+					if ($('[data-input-lid="1584868178894"] .t-radio:eq(0)').prop('checked')) {
+						type = 0;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1584868178894"] .t-radio:eq(1)').prop(
+						'checked')) {
+                            type = 1;
+						updateFinalPrice();
+					}
+				});
+
+				$('[data-input-lid="1584868125487"] .t-radio__wrapper').change(function () { // кол-во полос
+					$('[data-input-lid="1584868125487"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							row = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
+					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
+					for (let index = 0; index < table[type][0].length; index++) {
+						if (rangeVal < 0 || !parseInt(rangeVal)) {
+							$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val('');
+							break;
+						} else if (rangeVal <= table[type][0][index]) {
+							column = index;
+							break;
+						} else if (rangeVal > table[type][0][table[type][0].length - 1]) {
+							column = table[type][0].length - 1;
+							break;
+						}
+					}
+					updateFinalPrice();
+				});
+
+				$('[data-input-lid="1585845219300"] .t-radio__wrapper').change(function () { // кол-во комплектов
+					$('[data-input-lid="1585845219300"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							numberOfSets = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				coverLaminationLabel.parent().change(function () { // допы
+					if (coverLaminationCheckbox.prop('checked')) {
+						coverLaminationRadioWrapper.show();
+						coverLaminationRadio.first().prop('checked', true);
+						coverLamination = true;
+						lamination_row = 1;
+						updateFinalPrice();
+					} else {
+						coverLaminationRadioWrapper.hide();
+						coverLaminationRadio.each(function(index, element){
+							$(element).prop('checked', false);
+						});
+						coverLamination = false;
+						updateFinalPrice();
+					}
+				});
+
+				coverLaminationRadioWrapper.find('.t-radio__wrapper').change(function(){
+					coverLaminationRadio.each(function(index, element){
+						if ($(element).prop('checked')) {
+							lamination_row = index + 1;
+						}
+					});
+					updateFinalPrice();
+				});
+
+				setInterval(updateFinalPrice, 100);
+			}, 600);
+		} catch (err) {}
+	});
+</script>
