@@ -1,0 +1,418 @@
+<!-- Листовки евро в типографии ФиПС -->
+
+<style>
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		height: 40px;
+		border-radius: 5px;
+	}
+
+	.t-form__screen .t-form__errorbox-wrapper {
+		clear: both;
+	}
+
+	.t-form__inputsbox.t-form__screen {
+		background-color: #fff;
+		padding: 20px;
+	}
+
+	.t-form__screen .t-upwidget-container__button {
+		background-color: #44647d !important;
+	}
+
+	.t-form__screen .t-input-group_fr {
+		text-align: right;
+	}
+
+	.t-form__screen .t-form__submit {
+		margin: 30px 0 0;
+	}
+
+	.t-form__screen .t-input-group {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		margin: 0;
+		width: 20%;
+		min-width: 200px;
+	}
+
+	.t-form__screen .t-input-title {
+		width: 100%;
+		height: auto;
+	}
+
+	.t-form__screen-wrapper.t-form__screen-wrapper_active {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_fr {
+		text-align: right;
+		justify-content: flex-end;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+		width: 50%;
+		align-content: flex-end;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_tx {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		width: 90%;
+	}
+
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_cb, 
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_uw {
+    width: 10%;
+    min-width: 290px;
+    margin-bottom: 0;
+}
+
+	.t-form__screen .t-input-group_ph,
+	.t-form__screen .t-input-group_sb,
+	.t-form__screen .t-input-group_in,
+	.t-form__screen .t-input-group_em,
+	.t-form__screen .t-input-group_nm,
+	.t-form__screen .t-input-group_uw {
+		width: 50%;
+		margin-right: 0;
+	}
+
+	.t-form__screen .t-input-group_in[data-input-lid="1584868297796"] {
+		width: 20%;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper {
+		width: 50%;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+		position: relative;
+		top: 10px;
+		left: -80px;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_cb .t-text_xs {
+		font-size: 15px;
+	}
+
+	.t-form__screen .t-form__submit .t-form__screen-btn-next {
+    	padding: 0 30px 0 10px;
+	}
+	.t-form__screen .t-form__submit .t-form__screen-btn-prev {
+		padding: 0 10px 0 30px;
+	}
+	.t-form__screen .t-form__submit .t-submit{
+		padding: 0 10px;
+	}
+	.t-form__screen .t-input-group{
+		margin-bottom: 25px;	
+	}
+	.t-form__screen .t-select__wrapper:after{
+		right: 70px;
+	}
+
+	@media screen and (max-width: 700px) {
+		.t-form__screen .t-input-group.t-input-group_fr {
+			text-align: center;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_ph,
+		.t-form__screen .t-input-group_sb,
+		.t-form__screen .t-input-group_in,
+		.t-form__screen .t-input-group_em,
+		.t-form__screen .t-input-group_nm,
+		.t-form__screen .t-input-group_uw {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.t-form__screen-wrapper.t-form__screen-wrapper_active {
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_uw {
+			text-align: center;
+		}
+
+		.t-form__screen .t-input-group_uw .t-input-block {
+			display: flex;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+			width: 100%;
+		}
+
+		.t-form__screen .t-form__screen-btn-prev {
+			margin-right: 0;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper {
+			justify-content: center;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-block {
+			width: auto;
+			display: flex;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+			position: inherit;
+			justify-content: center;
+			margin: 10px 0 15px;
+		}
+	}
+	@media screen and (max-width: 460px){
+		.t-form__screen .t-form__submit > .t-form__screen-btn-prev {
+			margin-bottom: 15px;
+			padding: 10px;
+		}
+		.t-form__screen .t-select__wrapper:after {
+			right: 40px;
+		}
+	}
+</style>
+<script>
+	$(document).ready(function () {
+
+		try {
+			setTimeout(function () {
+				$('.t-form__screen-current-view').remove();
+				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
+
+				function updateFinalPrice() {
+					
+					if (column == 0) {
+						rangeVal = 50;
+					}
+					
+					let final_price = Math.round(table[size][row + additionalRow][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+				}
+
+				//определение переменных
+				const table_mel = [
+					[ // Листовки евро_меловка
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[9.96, 8.3, 8.01, 7.73, 7.46, 7.2, 6.95, 6.7, 6.47, 6.24, 6.18, 6.12, 6.06, 6, 5.94, 5.88, 5.82, 5.76, 5.7, 5.64], // Меловка 130 гр., (4+0)
+						[11.52, 9.6, 9.26, 8.94, 8.63, 8.32, 8.03, 7.75, 7.48, 7.22, 7.15, 7.08, 7, 6.93, 6.87, 6.8, 6.73, 6.66, 6.59, 6.53], // Меловка 130 гр., (4+4)
+						[10.8, 9, 8.69, 8.38, 8.09, 7.8, 7.53, 7.27, 7.01, 6.77, 6.7, 6.63, 6.57, 6.5, 6.44, 6.37, 6.31, 6.25, 6.18, 6.12], // Меловка 170 гр., (4+0)
+						[13.2, 11, 10.62, 10.24, 9.88, 9.54, 9.21, 8.88, 8.57, 8.27, 8.19, 8.11, 8.03, 7.95, 7.87, 7.79, 7.71, 7.63, 7.56, 7.48], // Меловка 170 гр., (4+4)
+						[11.28, 9.4, 9.07, 8.75, 8.45, 8.15, 7.87, 7.59, 7.33, 7.07, 7, 6.93, 6.86, 6.79, 6.72, 6.66, 6.59, 6.52, 6.46, 6.39], // Меловка 250 гр., (4+0)
+						[13.68, 11.4, 11, 10.62, 10.24, 9.89, 9.54, 9.21, 8.88, 8.57, 8.49, 8.4, 8.32, 8.24, 8.15, 8.07, 7.99, 7.91, 7.83, 7.75], // Меловка 250 гр., (4+4)
+					],
+
+					[ // Листовки А6 МЕЛОВКА
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[9.6, 8, 7.72, 7.45, 7.19, 6.94, 6.69, 6.46, 6.23, 6.02, 5.96, 5.9, 5.84, 5.78, 5.72, 5.66, 5.61, 5.55, 5.5, 5.44], // Меловка 130 гр., (4+0)
+						[11.4, 9.5, 9.17, 8.85, 8.54, 8.24, 7.95, 7.67, 7.4, 7.14, 7.07, 7, 6.93, 6.86, 6.79, 6.73, 6.66, 6.59, 6.53, 6.46], // Меловка 130 гр., (4+4)
+						[10.2, 8.5, 8.2, 7.92, 7.64, 7.37, 7.11, 6.86, 6.62, 6.39, 6.33, 6.26, 6.2, 6.14, 6.08, 6.02, 5.96, 5.9, 5.84, 5.78], // Меловка 170 гр., (4+0)
+						[12.24, 10.2, 9.84, 9.5, 9.17, 8.85, 8.54, 8.24, 7.95, 7.67, 7.59, 7.52, 7.44, 7.37, 7.29, 7.22, 7.15, 7.08, 7.01, 6.94], // Меловка 170 гр., (4+4)
+						[10.8, 9, 8.69, 8.38, 8.09, 7.8, 7.53, 7.27, 7.01, 6.77, 6.7, 6.63, 6.57, 6.5, 6.44, 6.37, 6.31, 6.25, 6.18, 6.12], // Меловка 250 гр., (4+0)
+						[12.84, 10.7, 10.33, 9.96, 9.62, 9.28, 8.95, 8.64, 8.34, 8.05, 7.97, 7.89, 7.81, 7.73, 7.65, 7.58, 7.5, 7.42, 7.35, 7.28], // Меловка 250 гр., (4+4)
+					],
+
+					[ // Листовки А5 МЕЛОВКА 
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[13.08, 10.9, 10.52, 10.15, 9.8, 9.45, 9.12, 8.8, 8.49, 8.2, 8.11, 8.03, 7.95, 7.87, 7.8, 7.72, 7.64, 7.56, 7.49, 7.41], // Меловка 130 гр., (4+0)
+						[17.76, 14.8, 14.28, 13.78, 13.3, 12.83, 12.39, 11.95, 11.53, 11.13, 11.02, 10.91, 10.8, 10.69, 10.58, 10.48, 10.37, 10.27, 10.17, 10.07], // Меловка 130 гр., (4+4)
+						[13.68, 11.4, 11, 10.62, 10.24, 9.89, 9.54, 9.21, 8.88, 8.57, 8.49, 8.4, 8.32, 8.24, 8.15, 8.07, 7.99, 7.91, 7.83, 7.75], // Меловка 170 гр., (4+0)
+						[18.36, 15.3, 14.76, 14.25, 13.75, 13.27, 12.8, 12.36, 11.92, 11.51, 11.39, 11.28, 11.16, 11.05, 10.94, 10.83, 10.72, 10.62, 10.51, 10.41], // Меловка 170 гр., (4+4)
+						[14.76, 12.3, 11.87, 11.45, 11.05, 10.67, 10.29, 9.93, 9.59, 9.25, 9.16, 9.07, 8.97, 8.89, 8.8, 8.71, 8.62, 8.54, 8.45, 8.37], // Меловка 250 гр., (4+0)
+						[19.44, 16.2, 15.63, 15.09, 14.56, 14.05, 13.56, 13.08, 12.62, 12.18, 12.06, 11.94, 11.82, 11.7, 11.59, 11.47, 11.35, 11.24, 11.13, 11.02], // Меловка 250 гр., (4+4)
+					],
+
+					[ // Листовки А4 МЕЛОВКА
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[21.72, 18.1, 17.47, 16.86, 16.27, 15.7, 15.15, 14.62, 14.1, 13.61, 13.48, 13.34, 13.21, 13.07, 12.94, 12.81, 12.69, 12.56, 12.43, 12.31], // Меловка 130 гр., (4+0)
+						[30.12, 25.1, 24.22, 23.37, 22.56, 21.77, 21, 20.27, 19.56, 18.88, 18.69, 18.5, 18.31, 18.13, 17.95, 17.77, 17.59, 17.42, 17.24, 17.07], // Меловка 130 гр., (4+4)
+						[22.8, 19, 18.34, 17.69, 17.07, 16.48, 15.9, 15.34, 14.81, 14.29, 14.15, 14, 13.86, 13.73, 13.59, 13.45, 13.32, 13.18, 13.05, 12.92], // Меловка 170 гр., (4+0)
+						[30.96, 25.8, 24.9, 24.03, 23.18, 22.37, 21.59, 20.83, 20.11, 19.4, 19.21, 19.02, 18.83, 18.64, 18.45, 18.27, 18.08, 17.9, 17.72, 17.55], // Меловка 170 гр., (4+4)
+						[26.4, 22, 21.23, 20.49, 19.77, 19.08, 18.41, 17.77, 17.14, 16.54, 16.38, 16.21, 16.05, 15.89, 15.73, 15.58, 15.42, 15.27, 15.11, 14.96], // Меловка 250 гр., (4+0)
+						[33.14, 27.62, 26.65, 25.72, 24.82, 23.95, 23.11, 22.3, 21.52, 20.77, 20.56, 20.36, 20.15, 19.95, 19.75, 19.55, 19.36, 19.17, 18.97, 18.78], // Меловка 250 гр., (4+4)
+					]
+				];
+				const table_color = [
+					[ // Листовки евро_колоркопи
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[11.16, 9.3, 8.97, 8.66, 8.36, 8.06, 7.78, 7.51, 7.25, 6.99, 6.92, 6.85, 6.79, 6.72, 6.65, 6.58, 6.52, 6.45, 6.39, 6.32], // ColorCopy 160 гр. (4+0)
+						[12.72, 10.6, 10.23, 9.87, 9.53, 9.19, 8.87, 8.56, 8.26, 7.97, 7.89, 7.81, 7.73, 7.66, 7.58, 7.5, 7.43, 7.36, 7.28, 7.21], // ColorCopy 160 гр. (4+4)
+						[12.36, 10.3, 9.94, 9.59, 9.26, 8.93, 8.62, 8.32, 8.03, 7.75, 7.67, 7.59, 7.52, 7.44, 7.37, 7.29, 7.22, 7.15, 7.08, 7], // ColorCopy 200 гр. (4+0)
+						[15, 12.5, 12.06, 11.64, 11.23, 10.84, 10.46, 10.09, 9.74, 9.4, 9.31, 9.21, 9.12, 9.03, 8.94, 8.85, 8.76, 8.67, 8.59, 8.5], // ColorCopy 200 гр. (4+4)
+						[13.44, 11.2, 10.81, 10.43, 10.06, 9.71, 9.37, 9.04, 8.73, 8.42, 8.34, 8.25, 8.17, 8.09, 8.01, 7.93, 7.85, 7.77, 7.69, 7.62], // ColorCopy 300 гр. (4+0)
+						[16.32, 13.6, 13.12, 12.66, 12.22, 11.79, 11.38, 10.98, 10.6, 10.23, 10.12, 10.02, 9.92, 9.82, 9.73, 9.63, 9.53, 9.44, 9.34, 9.25], // ColorCopy 300 гр. (4+4)
+					],
+
+					[ // Листовки А6 КОЛОРКОПИ
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[10.32, 8.6, 8.3, 8.01, 7.73, 7.46, 7.2, 6.94, 6.7, 6.47, 6.4, 6.34, 6.28, 6.21, 6.15, 6.09, 6.03, 5.97, 5.91, 5.85], // ColorCopy 160 гр. (4+0)
+						[12.24, 10.2, 9.84, 9.5, 9.17, 8.85, 8.54, 8.24, 7.95, 7.67, 7.59, 7.52, 7.44, 7.37, 7.29, 7.22, 7.15, 7.08, 7.01, 6.94], // ColorCopy 160 гр. (4+4)
+						[11.64, 9.7, 9.36, 9.03, 8.72, 8.41, 8.12, 7.83, 7.56, 7.29, 7.22, 7.15, 7.08, 7.01, 6.94, 6.87, 6.8, 6.73, 6.66, 6.6], // ColorCopy 200 гр. (4+0)
+						[14.14, 11.78, 11.37, 10.97, 10.59, 10.22, 9.86, 9.51, 9.18, 8.86, 8.77, 8.68, 8.6, 8.51, 8.42, 8.34, 8.26, 8.17, 8.09, 8.01], // ColorCopy 200 гр. (4+4)
+						[12.84, 10.7, 10.33, 9.96, 9.62, 9.28, 8.95, 8.64, 8.34, 8.05, 7.97, 7.89, 7.81, 7.73, 7.65, 7.58, 7.5, 7.42, 7.35, 7.28], // ColorCopy 300 гр. (4+0)
+						[15.24, 12.7, 12.26, 11.83, 11.41, 11.01, 10.63, 10.26, 9.9, 9.55, 9.45, 9.36, 9.27, 9.17, 9.08, 8.99, 8.9, 8.81, 8.72, 8.64], // ColorCopy 300 гр. (4+4)
+					],
+
+					[ // Листовки А5 КОЛОРКОПИ
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[14.4, 12, 11.58, 11.17, 10.78, 10.41, 10.04, 9.69, 9.35, 9.02, 8.93, 8.84, 8.76, 8.67, 8.58, 8.5, 8.41, 8.33, 8.24, 8.16], // ColorCopy 160 гр. (4+0)
+						[19.56, 16.3, 15.73, 15.18, 14.65, 14.14, 13.64, 13.16, 12.7, 12.26, 12.14, 12.01, 11.89, 11.77, 11.66, 11.54, 11.42, 11.31, 11.2, 11.09], // ColorCopy 160 гр. (4+4)
+						[15.6, 13, 12.55, 12.11, 11.68, 11.27, 10.88, 10.5, 10.13, 9.78, 9.68, 9.58, 9.49, 9.39, 9.3, 9.2, 9.11, 9.02, 8.93, 8.84], // ColorCopy 200 гр. (4+0)
+						[21.12, 17.6, 16.98, 16.39, 15.82, 15.26, 14.73, 14.21, 13.72, 13.24, 13.1, 12.97, 12.84, 12.71, 12.59, 12.46, 12.34, 12.21, 12.09, 11.97], // ColorCopy 200 гр. (4+4)
+						[17.76, 14.8, 14.28, 13.78, 13.3, 12.83, 12.39, 11.95, 11.53, 11.13, 11.02, 10.91, 10.8, 10.69, 10.58, 10.48, 10.37, 10.27, 10.17, 10.07], // ColorCopy 300 гр. (4+0)
+						[23.88, 19.9, 19.2, 18.53, 17.88, 17.26, 16.65, 16.07, 15.51, 14.96, 14.82, 14.67, 14.52, 14.38, 14.23, 14.09, 13.95, 13.81, 13.67, 13.53], // ColorCopy 300 гр. (4+4)
+					],
+
+					[ // Листовки А4 КОЛОРКОПИ 
+						[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000], // Цветность\Количество
+						[24, 20, 19.3, 18.62, 17.97, 17.34, 16.74, 16.15, 15.59, 15.04, 14.89, 14.74, 14.59, 14.45, 14.3, 14.16, 14.02, 13.88, 13.74, 13.6], // ColorCopy 160 гр. (4+0)
+						[33.6, 28, 27.02, 26.07, 25.16, 24.28, 23.43, 22.61, 21.82, 21.06, 20.85, 20.64, 20.43, 20.23, 20.02, 19.82, 19.63, 19.43, 19.24, 19.04], // ColorCopy 160 гр. (4+4)
+						[25.92, 21.6, 20.84, 20.11, 19.41, 18.73, 18.08, 17.44, 16.83, 16.24, 16.08, 15.92, 15.76, 15.6, 15.45, 15.29, 15.14, 14.99, 14.84, 14.69], // ColorCopy 200 гр. (4+0)
+						[34.8, 29, 27.99, 27.01, 26.06, 25.15, 24.27, 23.42, 22.6, 21.81, 21.59, 21.37, 21.16, 20.95, 20.74, 20.53, 20.33, 20.12, 19.92, 19.72], // ColorCopy 200 гр. (4+4)
+						[31.68, 26.4, 25.48, 24.58, 23.72, 22.89, 22.09, 21.32, 20.57, 19.85, 19.65, 19.46, 19.26, 19.07, 18.88, 18.69, 18.5, 18.32, 18.14, 17.95], // ColorCopy 300 гр. (4+0)
+						[39.84, 33.2, 32.04, 30.92, 29.83, 28.79, 27.78, 26.81, 25.87, 24.97, 24.72, 24.47, 24.22, 23.98, 23.74, 23.51, 23.27, 23.04, 22.81, 22.58], //ColorCopy 300 гр. (4+4)
+					],
+				];
+				let table = table_mel;
+				let row = 1;
+				let additionalRow = 0;
+				let column = 0;
+				let size = 0;
+				let numberOfSets = 1;
+				let rangeVal = 50;
+
+				let timerId = setTimeout(function tick() {
+				  $('[data-input-lid="1592450980298"] .t-radio__wrapper').change();
+				  timerId = setTimeout(tick, 800); // (*)
+				}, 800);
+
+				// eventListeners
+				$("#rec177347579").off('change');
+				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
+				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+
+				$('[data-input-lid="1584868125487"] .t-radio__wrapper').change(function () { // размер
+					$('[data-input-lid="1584868125487"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							switch (index) {
+								case 0:
+									table = table_mel;
+									row = 1;
+									break;
+								case 1:
+									table = table_mel;
+									row = 3;
+									break;
+								case 2:
+									table = table_mel;
+									row = 5;
+									break;
+								case 3:
+									table = table_color;
+									row = 1;
+									break;
+								case 4:
+									table = table_color;
+									row = 3;
+									break;
+								case 5:
+									table = table_color;
+									row = 5;
+									break;
+								default:
+									break;
+							}
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584868178894"] .t-radio__wrapper').change(function () { // цветность
+					$('[data-input-lid="1584868178894"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							additionalRow = +index;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1592450980298"] .t-radio__wrapper').change(function () { // размер
+					$('[data-input-lid="1592450980298"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							size = +index;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
+					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
+					for (let index = 0; index < table[size][0].length; index++) {
+						if (rangeVal < 0 || !parseInt(rangeVal)) {
+							$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val('');
+							break;
+						} else if (rangeVal <= table[size][0][index]) {
+							column = index;
+							break;
+						} else if (rangeVal > table[size][0][table[size][0].length - 1]) {
+							column = table[size][0].length - 1;
+							break;
+						}
+					}
+					updateFinalPrice();
+				});
+
+				$('[data-input-lid="1585845219300"] .t-radio__wrapper').change(
+			function () { // кол-во комплектов
+					$('[data-input-lid="1585845219300"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							numberOfSets = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				setInterval(updateFinalPrice, 100);
+			}, 600);
+		} catch (err) {}
+	});
+</script>
