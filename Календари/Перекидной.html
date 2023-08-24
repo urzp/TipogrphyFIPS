@@ -211,53 +211,56 @@
 		try {
 			setTimeout(function () {
 				//определение переменных
-				const table = [ // Календарь ДОМИК
-					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
-					[115.71, 87, 83.09, 77.68, 74.97, 72.34, 69.81, 67.37, 65.01, 62.73], // Основание 200*120*60
-					[9.1, 7, 7, 6.99, 6.98, 6.96, 6.95, 6.93, 6.92, 6.91] // Цветная пружинка
+				const table = [ // Календарь ПЕРЕКИДНОЙ -первый шаг минимальный 10 (до 50 получается 5 шагов по 10), потом по 25
+					[10, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
+					[458.35, 344.6256, 282.48, 278.53, 274.63, 270.78, 266.99, 263.25, 259.57, 255.93, 252.35], // Блок 6 полос 4+4
+					[516.18, 388.1064, 318.12, 313.98, 309.9, 305.87, 301.9, 297.97, 294.1, 290.28, 286.5], // Блок 12 полос 4+0
+					[64.35, 25.74, 19.8, 19.7, 19.6, 19.5, 19.41, 19.31, 19.21, 19.12, 19.02] // Ламинация обложки
 				];
 				const table_lamination = [
-					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
-					[14.3, 13, 12.87, 12.48, 12.36, 12.24, 12.11, 11.99, 11.87, 11.75], // Ламинация гл.
-					[15.4, 14, 14, 13.98, 13.95, 13.92, 13.9, 13.87, 13.84, 13.81], // ламинация мат
+					[10, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
+					[32.89, 17.94, 13.8, 13.73, 13.66, 13.59, 13.53, 13.46, 13.39, 13.32, 13.26], // Ламинат гл
+					[36.99, 20.93, 16.1, 16.02, 15.94, 15.86, 15.78, 15.7, 15.62, 15.54, 15.47], // ламинат мат
 				];
-				const laminationCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация 1+1"]');
+				const laminationCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация обложки 1+1"]');
 				const laminationLabel = laminationCheckbox.parent();
-				const laminationRadioWrapper = $('[data-input-lid="1592511946282"]');
+				const laminationRadioWrapper = $('[data-input-lid="1592542234070"]');
 				const laminationRadio = laminationRadioWrapper.find('.t-radio');
 				let row = 1;
 				let column = 0;
 				let numberOfSets = 1;
+				let rangeVal = 10;
 				let lamination = false;
 				let lamination_row = 1;
-				let spring = false;
-				let rangeVal = 50;
-				let markup = 7;
+				let markup = 15;
 
 				// модификация элементов страницы
 				$('.t-form__screen-current-view').remove();
 				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
-
-				// eventListeners
-				$("#rec184653052").off('change');
-				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
-				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
 				laminationRadioWrapper.css('padding-left', '30px');
 				laminationRadioWrapper.detach();
 
+				// eventListeners
+				$("#rec184655931").off('change');
+				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
+				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+
 				// основной скрипт калькулятора
 				function updateFinalPrice() {
+
 					if (column == 0) {
-						rangeVal = 50;
+						rangeVal = 10;
 					}
-					let final_price = Math.floor(table[row][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+					let stack;
+					if (column == 0 || column == 1) {
+						stack = 10;
+					} else {
+						stack = 25;
+					}
+					let final_price = Math.floor(table[row][column] * Math.ceil(rangeVal / stack) * stack * numberOfSets);
 
 					if (lamination) {
-						final_price += Math.floor(table_lamination[lamination_row][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
-					}
-
-					if (spring) {
-						final_price += Math.floor(table[2][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+						final_price += Math.floor(table_lamination[lamination_row][column] * Math.ceil(rangeVal / stack) * stack * numberOfSets);
 					}
 
 					final_price = final_price + Math.ceil(rangeVal / 50) * 50 * markup;
@@ -267,6 +270,15 @@
 					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
 	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
 				}
+
+				$('[data-input-lid="1585826917004"] .t-radio__wrapper').change(function () { // кол-во полос
+					$('[data-input-lid="1585826917004"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							row = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
 
 				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
 					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
@@ -309,20 +321,6 @@
 						});
 						laminationRadioWrapper.detach();
 						lamination = false;
-						updateFinalPrice();
-					}
-
-					if ($(
-							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]')
-						.prop('checked')) {
-						spring = $(
-							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]'
-							).prop('checked');
-						updateFinalPrice();
-					} else {
-						spring = $(
-							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]'
-							).prop('checked');
 						updateFinalPrice();
 					}
 				});
