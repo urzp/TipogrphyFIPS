@@ -244,25 +244,25 @@
 					[97.86, 81.55, 79.10, 76.33, 74.81, 73.31, 71.85, 70.41, 69.00, 67.62, 66.61, 65.61, 64.62, 63.65, 63.02, 62.39, 61.76, 61.15, 60.53, 59.93], // А4 (210*297 мм)
 					[205.39, 157.99, 153.25, 148.65, 145.68, 142.77, 139.91, 137.11, 134.37, 131.68, 129.71, 127.76, 125.85, 123.96, 122.72, 121.49, 120.28, 119.07, 117.88, 116.70] // А3 (297*420 мм)
 				];
-				let table = table_vinyl;
+				let table = table_paper;
 				let row = 1;
 				let column = 0;
 				let numberOfSets = 1;
 				let rangeVal = 50;
 
 				// eventListeners
-				$("#rec184672304").off('change');
+				$("#rec184663530").off('change');
 				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
 				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
 
-				$('[data-input-lid="1589802486005"] .t-radio__wrapper').change(function () { // материал
+				$('[data-input-lid="1589802362291"] .t-radio__wrapper').change(function () { // материал
 				
-					if ($('[data-input-lid="1589802486005"] .t-radio:eq(0)').prop('checked')) {
-						table = table_vinyl;
-						updateFinalPrice();
-					} else if ($('[data-input-lid="1589802486005"] .t-radio:eq(1)').prop(
-						'checked')) {
+					if ($('[data-input-lid="1589802362291"] .t-radio:eq(0)').prop('checked')) {
 						table = table_paper;
+						updateFinalPrice();
+					} else if ($('[data-input-lid="1589802362291"] .t-radio:eq(1)').prop(
+						'checked')) {
+						table = table_vinyl;
 						updateFinalPrice();
 					}
 				});
