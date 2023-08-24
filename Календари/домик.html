@@ -211,70 +211,49 @@
 		try {
 			setTimeout(function () {
 				//определение переменных
-				const table_mini = [ // Квартальник 3 в 1 МИНИ 
+				const table = [ // Календарь ДОМИК
 					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
-					[186.2, 140, 133.7, 125.01, 120.63, 116.41, 112.34, 108.41, 104.61, 100.95], // Постер + 1 поле
-					[5.4, 2.7, 2.67, 2.67, 2.65, 2.62, 2.59, 2.57, 2.54, 2.52] // Цветная пружинка
+					[110.04, 82.74, 79.02, 73.88, 71.29, 68.8, 66.39, 64.07, 61.83, 59.66], // Основание 200*120*60
+					[8.19, 6.3, 6.3, 6.29, 6.28, 6.27, 6.25, 6.24, 6.23, 6.22] // Цветная пружинка
 				];
-				const table_mini_lamination = [
+				const table_lamination = [
 					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
-					[12.6, 12, 11.88, 11.76, 11.64, 11.53, 11.41, 11.3, 11.18, 11.07], // Ламинация постера гл.
-					[38.38, 38, 37.62, 37.24, 36.87, 36.5, 36.14, 35.78, 35.42, 35.06], // Ламинация всего календаря гл.
-					[12.6, 12, 11.88, 11.76, 11.64, 11.53, 11.41, 11.3, 11.18, 11.07], // Ламинация постера мат
-					[41.41, 41, 40.59, 40.18, 39.78, 39.38, 38.99, 38.6, 38.21, 37.83], // Ламинация всего календаря
+					[13.92, 12.65, 12.52, 12.15, 12.03, 11.91, 11.79, 11.67, 11.55, 11.44], // Ламинация гл.
+					[12.65, 11.5, 11.5, 11.48, 11.46, 11.44, 11.41, 11.39, 11.37, 11.35], // ламинация мат
 				];
-				const table_midi = [ // Квартальник 3 в 1 МИДИ 
-					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
-					[239.4, 180, 171.9, 160.73, 155.1, 149.67, 144.43, 139.38, 134.5, 129.79], // Постер + 1 поле
-					[13, 6.5, 6.44, 6.44, 6.37, 6.31, 6.24, 6.18, 6.12, 6.06] // Цветная пружинка
-				];
-				const table_midi_lamination = [
-					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
-					[22.05, 21, 20.79, 20.58, 20.38, 20.17, 19.97, 19.77, 19.57, 19.38], // Ламинация постера гл.
-					[45.45, 45, 44.55, 44.1, 43.66, 43.23, 42.79, 42.37, 41.94, 41.52], // Ламинация всего календаря гл.
-					[23.1, 22, 21.78, 21.56, 21.35, 21.13, 20.92, 20.71, 20.51, 20.3], // Ламинация постера мат
-					[47.47, 47, 46.53, 46.06, 45.6, 45.15, 44.7, 44.25, 43.81, 43.37], // Ламинация всего календаря
-				];
-				const laminationPosterCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация постера"]');
-				const laminatonPosterLabel = laminationPosterCheckbox.parent();
-				const laminationAllCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация всего календаря"]');
-				const laminationAllLabel = laminationAllCheckbox.parent();
-				const laminationCheckboxes = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация постера"], [data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация всего календаря"]');
-				const laminationTypeWrapper = $('[data-input-lid="1592510845467"]');
-				const laminationTypeRadio = laminationTypeWrapper.find('.t-radio');
-				let table = table_mini;
-				let table_lamination = table_mini_lamination;
+				const laminationCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация 1+1"]');
+				const laminationLabel = laminationCheckbox.parent();
+				const laminationRadioWrapper = $('[data-input-lid="1592511946282"]');
+				const laminationRadio = laminationRadioWrapper.find('.t-radio');
 				let row = 1;
 				let column = 0;
 				let numberOfSets = 1;
-				let rangeVal = 50;
 				let lamination = false;
+				let lamination_row = 1;
 				let spring = false;
-				let lamination_type = 1;
-				let lamination_size = 0;
+				let rangeVal = 50;
 				let markup = 7;
 
 				// модификация элементов страницы
 				$('.t-form__screen-current-view').remove();
 				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
-				laminationTypeWrapper.css('padding-left', '30px');
-				laminationTypeWrapper.detach();
 
 				// eventListeners
-				$("#rec189829941").off('change');
+				$("#rec184653052").off('change');
 				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
 				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+				laminationRadioWrapper.css('padding-left', '30px');
+				laminationRadioWrapper.detach();
 
 				// основной скрипт калькулятора
 				function updateFinalPrice() {
-
 					if (column == 0) {
 						rangeVal = 50;
 					}
 					let final_price = Math.floor(table[row][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
 
 					if (lamination) {
-						final_price += Math.floor(table_lamination[lamination_type + lamination_size][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+						final_price += Math.floor(table_lamination[lamination_row][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
 					}
 
 					if (spring) {
@@ -288,19 +267,6 @@
 					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
 	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
 				}
-
-				$('[data-input-lid="1584868125487"] .t-radio__wrapper').change(function () { // размер
-					if ($('[data-input-lid="1584868125487"] .t-radio:eq(0)').prop('checked')) {
-						table = table_mini;
-						table_lamination = table_mini_lamination;
-						updateFinalPrice();
-					} else if ($('[data-input-lid="1584868125487"] .t-radio:eq(1)').prop(
-						'checked')) {
-						table = table_midi;
-						table_lamination = table_midi_lamination;
-						updateFinalPrice();
-					}
-				});
 
 				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
 					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
@@ -329,6 +295,23 @@
 				});
 
 				$('[data-input-lid="1584971819844"] .t-checkboxes__wrapper').change(function () { // допы
+					if (laminationCheckbox.prop('checked')) {
+						laminationLabel.after(laminationRadioWrapper);
+						if(!laminationRadio.is(':checked')){
+							laminationRadio.first().prop('checked', true);
+							lamination_row = 1;
+						}
+						lamination = true;
+						updateFinalPrice();
+					} else {
+						laminationRadio.each(function(index, element){
+							$(element).prop('checked', false);
+						});
+						laminationRadioWrapper.detach();
+						lamination = false;
+						updateFinalPrice();
+					}
+
 					if ($(
 							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]')
 						.prop('checked')) {
@@ -344,46 +327,13 @@
 					}
 				});
 
-				laminationCheckboxes.click(function(){
-					if ($(this).is(':checked')) {
-						laminationCheckboxes.not(this).prop('checked', false);
-
-						if (laminationPosterCheckbox.prop('checked')) {
-							laminationTypeWrapper.detach();
-							laminatonPosterLabel.after(laminationTypeWrapper);
-							if(!laminationTypeRadio.is(':checked')){
-								laminationTypeRadio.first().prop('checked', true);
-							}
-							lamination = true;
-							lamination_size = 0;
-							updateFinalPrice();
-						} else if (laminationAllCheckbox.prop('checked')) {
-							laminationTypeWrapper.detach();
-							laminationAllLabel.after(laminationTypeWrapper);
-							if(!laminationTypeRadio.is(':checked')){
-								laminationTypeRadio.first().prop('checked', true);
-							}
-							lamination = true;
-							lamination_size = 1;
-							updateFinalPrice();
-						}
-					} else {
-						laminationTypeRadio.each(function(index, element){
-							$(element).prop('checked', false);
-						});
-						laminationTypeWrapper.detach();
-						lamination = false;
-						updateFinalPrice();
-					}
-				});
-
-				laminationTypeWrapper.find('.t-radio__wrapper').change(function(){
-					laminationTypeRadio.each(function(index, element){
+				laminationRadioWrapper.find('.t-radio__wrapper').change(function(){
+					laminationRadio.each(function(index, element){
 						if ($(element).prop('checked')) {
-							lamination_type = +index * 2 + 1;
+							lamination_row = +index + 1;
+							updateFinalPrice();
 						}
 					});
-					updateFinalPrice();
 				});
 
 				setInterval(updateFinalPrice, 100);
