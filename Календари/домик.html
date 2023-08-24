@@ -1,0 +1,343 @@
+<style>
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in {
+		width: 10%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper .t-input-group_rd + .t-input-group_in + .t-input-group_in .t-input-block {
+		width: 50%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		height: 40px;
+		border-radius: 5px;
+	}
+
+	.t-form__screen .t-form__errorbox-wrapper {
+		clear: both;
+	}
+
+	.t-form__inputsbox.t-form__screen {
+		background-color: #fff;
+		padding: 20px;
+	}
+
+	.t-form__screen .t-upwidget-container__button {
+		background-color: #44647d !important;
+	}
+
+	.t-form__screen .t-input-group_fr {
+		text-align: right;
+	}
+
+	.t-form__screen .t-form__submit {
+		margin: 30px 0 0;
+	}
+
+	.t-form__screen .t-input-group {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		margin: 0;
+		width: 20%;
+		min-width: 200px;
+	}
+
+	.t-form__screen .t-input-title {
+		width: 100%;
+		height: auto;
+	}
+
+	.t-form__screen-wrapper.t-form__screen-wrapper_active {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_fr {
+		text-align: right;
+		justify-content: flex-end;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+		width: 50%;
+		align-content: flex-end;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_tx {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block {
+		width: 100%;
+	}
+
+	.t-form__screen-wrapper_active .t-input-block .t-input,
+	.t-form__screen-wrapper_active .t-input-block .t-select {
+		width: 90%;
+	}
+
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_cb, 
+	.t-form__screen .t-form__screen-wrapper_active .t-input-group_uw {
+    width: 10%;
+    min-width: 290px;
+    margin-bottom: 0;
+}
+
+	.t-form__screen .t-input-group_ph,
+	.t-form__screen .t-input-group_sb,
+	.t-form__screen .t-input-group_in,
+	.t-form__screen .t-input-group_em,
+	.t-form__screen .t-input-group_nm,
+	.t-form__screen .t-input-group_uw {
+		width: 50%;
+		margin-right: 0;
+	}
+
+	.t-form__screen .t-input-group_in[data-input-lid="1584868297796"] {
+		width: 20%;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper {
+		width: 50%;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
+	.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+		position: relative;
+		top: 10px;
+		left: -80px;
+	}
+
+	.t-form__screen .t-input-group.t-input-group_cb .t-text_xs {
+		font-size: 15px;
+	}
+
+	.t-form__screen .t-form__submit .t-form__screen-btn-next {
+    	padding: 0 30px 0 10px;
+	}
+	.t-form__screen .t-form__submit .t-form__screen-btn-prev {
+		padding: 0 10px 0 30px;
+	}
+	.t-form__screen .t-form__submit .t-submit{
+		padding: 0 10px;
+	}
+	.t-form__screen .t-input-group{
+		margin-bottom: 25px;	
+	}
+	.t-form__screen .t-select__wrapper:after{
+		right: 70px;
+	}
+
+	@media screen and (max-width: 700px) {
+		.t-form__screen .t-input-group.t-input-group_fr {
+			text-align: center;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_ph,
+		.t-form__screen .t-input-group_sb,
+		.t-form__screen .t-input-group_in,
+		.t-form__screen .t-input-group_em,
+		.t-form__screen .t-input-group_nm,
+		.t-form__screen .t-input-group_uw {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.t-form__screen-wrapper.t-form__screen-wrapper_active {
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group_uw {
+			text-align: center;
+		}
+
+		.t-form__screen .t-input-group_uw .t-input-block {
+			display: flex;
+			justify-content: center;
+		}
+
+		.t-form__screen .t-input-group.t-input-group_uw+.t-input-group.t-input-group_fr {
+			width: 100%;
+		}
+
+		.t-form__screen .t-form__screen-btn-prev {
+			margin-right: 0;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper {
+			justify-content: center;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-block {
+			width: auto;
+			display: flex;
+		}
+
+		.t-form__screen .sepcial-flex-wrapper .t-input-group_cb {
+			position: inherit;
+			justify-content: center;
+			margin: 10px 0 15px;
+		}
+	}
+	@media screen and (max-width: 460px){
+		.t-form__screen .t-form__submit > .t-form__screen-btn-prev {
+			margin-bottom: 15px;
+			padding: 10px;
+		}
+		.t-form__screen .t-select__wrapper:after {
+			right: 40px;
+		}
+	}
+</style>
+<script>
+	$(document).ready(function () {
+
+		try {
+			setTimeout(function () {
+				//определение переменных
+				const table = [ // Календарь ДОМИК
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
+					[110.04, 82.74, 79.02, 73.88, 71.29, 68.8, 66.39, 64.07, 61.83, 59.66], // Основание 200*120*60
+					[8.19, 6.3, 6.3, 6.29, 6.28, 6.27, 6.25, 6.24, 6.23, 6.22] // Цветная пружинка
+				];
+				const table_lamination = [
+					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
+					[13.92, 12.65, 12.52, 12.15, 12.03, 11.91, 11.79, 11.67, 11.55, 11.44], // Ламинация гл.
+					[12.65, 11.5, 11.5, 11.48, 11.46, 11.44, 11.41, 11.39, 11.37, 11.35], // ламинация мат
+				];
+				const laminationCheckbox = $('[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Ламинация 1+1"]');
+				const laminationLabel = laminationCheckbox.parent();
+				const laminationRadioWrapper = $('[data-input-lid="1592511946282"]');
+				const laminationRadio = laminationRadioWrapper.find('.t-radio');
+				let row = 1;
+				let column = 0;
+				let numberOfSets = 1;
+				let lamination = false;
+				let lamination_row = 1;
+				let spring = false;
+				let rangeVal = 50;
+				let markup = 7;
+
+				// модификация элементов страницы
+				$('.t-form__screen-current-view').remove();
+				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
+
+				// eventListeners
+				$("#rec184653052").off('change');
+				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
+				$(".t-form__screen-wrapper .t-input.js-tilda-rule").off();
+				laminationRadioWrapper.css('padding-left', '30px');
+				laminationRadioWrapper.detach();
+
+				// основной скрипт калькулятора
+				function updateFinalPrice() {
+					if (column == 0) {
+						rangeVal = 50;
+					}
+					let final_price = Math.floor(table[row][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+
+					if (lamination) {
+						final_price += Math.floor(table_lamination[lamination_row][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+					}
+
+					if (spring) {
+						final_price += Math.floor(table[2][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
+					}
+
+					final_price = final_price + Math.ceil(rangeVal / 50) * 50 * markup;
+
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+				}
+
+				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
+					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
+					for (let index = 0; index < table[0].length; index++) {
+						if (rangeVal < 0 || !parseInt(rangeVal)) {
+							$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val('');
+							break;
+						} else if (rangeVal <= table[0][index]) {
+							column = index;
+							break;
+						} else if (rangeVal > table[0][table[0].length - 1]) {
+							column = table[0].length - 1;
+							break;
+						}
+					}
+					updateFinalPrice();
+				});
+
+				$('[data-input-lid="1585845219300"] .t-radio__wrapper').change(function () { // кол-во комплектов
+					$('[data-input-lid="1585845219300"] .t-radio').each(function (index, element) {
+						if ($(element).prop('checked')) {
+							numberOfSets = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				$('[data-input-lid="1584971819844"] .t-checkboxes__wrapper').change(function () { // допы
+					if (laminationCheckbox.prop('checked')) {
+						laminationLabel.after(laminationRadioWrapper);
+						if(!laminationRadio.is(':checked')){
+							laminationRadio.first().prop('checked', true);
+							lamination_row = 1;
+						}
+						lamination = true;
+						updateFinalPrice();
+					} else {
+						laminationRadio.each(function(index, element){
+							$(element).prop('checked', false);
+						});
+						laminationRadioWrapper.detach();
+						lamination = false;
+						updateFinalPrice();
+					}
+
+					if ($(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]')
+						.prop('checked')) {
+						spring = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						spring = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+				});
+
+				laminationRadioWrapper.find('.t-radio__wrapper').change(function(){
+					laminationRadio.each(function(index, element){
+						if ($(element).prop('checked')) {
+							lamination_row = +index + 1;
+							updateFinalPrice();
+						}
+					});
+				});
+
+				setInterval(updateFinalPrice, 100);
+			}, 600);
+		} catch (err) {}
+	});
+</script>
