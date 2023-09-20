@@ -216,7 +216,8 @@
 					[210.61, 183.14, 174.9, 167.03, 162.85, 158.78, 154.81, 150.94, 147.17, 143.49], // 1 рекламное поле
 					[257.97, 218.62, 208.78, 199.39, 194.4, 189.54, 184.8, 180.18, 175.68, 171.29], // 3 рекламных поля
 					[17.38, 17.38, 17.21, 17.03, 16.86, 16.7, 16.53, 16.36, 16.2, 16.04], // Дизайнерские блоки
-					[12.08, 12.075, 11.95, 11.83, 11.72, 11.6, 11.48, 11.37, 11.25, 11.14] // Цветная пружинка
+					[12.08, 12.075, 11.95, 11.83, 11.72, 11.6, 11.48, 11.37, 11.25, 11.14], // Цветная пружинка
+					[15.0, 15.0, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00], // Индивидуальная упаковка
 				];
 				const table_mini_lamination = [ // Квартальник МИНИ ламинация
 					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
@@ -232,7 +233,8 @@
 					[275.55, 239.61, 234.82, 230.12, 224.94, 219.88, 214.94, 210.1, 205.37, 200.75], // 1 рекламное поле
 					[326.29, 276.52, 270.99, 265.57, 259.59, 253.75, 248.04, 242.46, 237.01, 231.68], // 3 рекламных поля
 					[18.13, 18.13, 17.95, 17.77, 17.59, 17.42, 17.24, 17.07, 16.9, 16.73], // Дизайнерские блоки
-					[13.04, 13.04, 12.91, 12.78, 12.65, 12.53, 12.4, 12.28, 12.15, 12.03] // Цветная пружинка
+					[13.04, 13.04, 12.91, 12.78, 12.65, 12.53, 12.4, 12.28, 12.15, 12.03], // Цветная пружинка
+					[15.0, 15.0, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00], // Индивидуальная упаковка
 				];
 				const table_midi_lamination = [
 					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
@@ -265,6 +267,7 @@
 				let lamination = false;
 				let blocks = false;
 				let spring = false;
+				let package = false;
 				let lamination_type = 1;
 				let lamination_size = 0;
 				let markup = 15;
@@ -302,12 +305,17 @@
 						final_price += Math.floor(table[4][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
 					}
 
+					let package_price = 0
+					if (package) {
+						package_price = table[5][column];
+					}
+
 					final_price = final_price + Math.ceil(rangeVal / 50) * 50 * markup;
 
-					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
-					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
-					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
-	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price) + package_price} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93) + package_price}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93) + package_price);
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price) + package_price);
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93) + package_price);
 				}
 
 				$('[data-input-lid="1584868125487"] .t-radio__wrapper').change(function () { // размер
@@ -384,6 +392,20 @@
 					} else {
 						spring = $(
 							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+
+					if ($(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]')
+						.prop('checked')) {
+						package = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						package = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]'
 							).prop('checked');
 						updateFinalPrice();
 					}
