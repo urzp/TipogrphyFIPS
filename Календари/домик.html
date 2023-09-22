@@ -214,7 +214,8 @@
 				const table = [ // Календарь ДОМИК
 					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
 					[115.71, 87, 83.09, 77.68, 74.97, 72.34, 69.81, 67.37, 65.01, 62.73], // Основание 200*120*60
-					[9.1, 7, 7, 6.99, 6.98, 6.96, 6.95, 6.93, 6.92, 6.91] // Цветная пружинка
+					[9.1, 7, 7, 6.99, 6.98, 6.96, 6.95, 6.93, 6.92, 6.91], // Цветная пружинка
+					[15.0, 15.0, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00], // Индивидуальная упаковка
 				];
 				const table_lamination = [
 					[50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // Цветность\Количество
@@ -233,6 +234,7 @@
 				let spring = false;
 				let rangeVal = 50;
 				let markup = 7;
+				let package = false;
 
 				// модификация элементов страницы
 				$('.t-form__screen-current-view').remove();
@@ -259,13 +261,18 @@
 					if (spring) {
 						final_price += Math.floor(table[2][column] * Math.ceil(rangeVal / 50) * 50 * numberOfSets);
 					}
+					
+					let package_price = 0
+					if (package) {
+						package_price = table[3][column];
+					}
 
 					final_price = final_price + Math.ceil(rangeVal / 50) * 50 * markup;
 
-					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
-					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
-					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
-	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price) + package_price} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93) + package_price}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93) + package_price);
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price) + package_price);
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93) + package_price);
 				}
 
 				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
@@ -322,6 +329,20 @@
 					} else {
 						spring = $(
 							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Цветная пружинка"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
+					
+					if ($(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]')
+						.prop('checked')) {
+						package = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						package = $(
+							'[data-input-lid="1584971819844"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]'
 							).prop('checked');
 						updateFinalPrice();
 					}
