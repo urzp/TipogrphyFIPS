@@ -1,0 +1,71 @@
+<style>
+    .inf_baner{
+        opacity: 0.01;
+    }
+</style>
+
+<script> $(window).load(()=>{
+
+let packegElement = document.querySelector("[value='Индивидуальная упаковка']").parentNode
+
+intElements("inf_baner")
+
+packegElement.onmouseover = function(event) { animeteElements("inf_baner", true, {x:event.clientX, y:event.clientY}, {x:20, y: 25}, {x:'right', y: 'bottom'}) };
+
+packegElement.onmouseout = function(event) { animeteElements("inf_baner", false) }
+
+function intElements(className){
+	let parmsGroupeElements = {
+		left:0,
+		right:0,
+		top:0,
+		bottom: 0,
+		width: 0,
+		height: 0,
+	}
+	for (element of document.getElementsByClassName(className)){
+		let paramsElement = element.getBoundingClientRect()
+		if (paramsElement.right > parmsGroupeElements.right) parmsGroupeElements.right = paramsElement.right
+		if (paramsElement.left < parmsGroupeElements.left) parmsGroupeElements.left = paramsElement.left
+		if (paramsElement.top < parmsGroupeElements.top) parmsGroupeElements.top = paramsElement.top
+		if (paramsElement.bottom > parmsGroupeElements.bottom) parmsGroupeElements.bottom = paramsElement.bottom
+	}
+	parmsGroupeElements.width = parmsGroupeElements.right - parmsGroupeElements.left
+	parmsGroupeElements.height = parmsGroupeElements.bottom - parmsGroupeElements.top
+	for (element of document.getElementsByClassName(className)){
+		let startPosition = {} 
+		startPosition.x = element.getBoundingClientRect().left
+		startPosition.y = element.getBoundingClientRect().top
+		element.startPosition = startPosition
+		element.parmsGroupeElements = parmsGroupeElements
+	}	
+	console.log(parmsGroupeElements)
+}
+
+function animeteElements(className, showMode = false, position = {x:0,y:0}, gap = {x:0,y:0}, aligning = {x:'left', y:'top'}){
+	let elements = document.getElementsByClassName(className)
+	if (!showMode) {
+		for (element of elements){
+			let coords = element.getBoundingClientRect()
+			element.style.opacity = 0.0;
+		}
+	}else{
+		if ( aligning.x == 'left' ){ 
+			position.x = position.x + gap.x
+		}else{
+			position.x = position.x - element.parmsGroupeElements.width - gap.x
+		}
+		if ( aligning.y == 'top' ){ 
+			position.y = position.y + gap.y
+		}else{
+			position.y = position.y - element.parmsGroupeElements.height - gap.y
+		}
+		for (element of elements){
+			element.style.opacity = 1.0;
+			element.style.left = ( position.x  + element.startPosition.x ) + 'px';
+			element.style.top = ( position.y + element.startPosition.y ) + 'px';
+		}		
+	}
+}
+ 
+}) </script>
