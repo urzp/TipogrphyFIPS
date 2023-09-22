@@ -234,6 +234,7 @@
 				let lamination = false;
 				let lamination_row = 1;
 				let markup = 15;
+				let package = false;
 
 				// модификация элементов страницы
 				$('.t-form__screen-current-view').remove();
@@ -264,12 +265,17 @@
 						final_price += Math.floor(table_lamination[lamination_row][column] * Math.ceil(rangeVal / stack) * stack * numberOfSets);
 					}
 
+					let package_price = 0
+					if (package) {
+						package_price = table[4][column];
+					}
+
 					final_price = final_price + Math.ceil(rangeVal / 50) * 50 * markup;
 
-					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
-					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
-					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
-	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price) + package_price} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93) + package_price}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93) + package_price);
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price) + package_price);
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93) + package_price);
 				}
 
 				$('[data-input-lid="1585826917004"] .t-radio__wrapper').change(function () { // кол-во полос
