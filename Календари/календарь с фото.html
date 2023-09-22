@@ -220,10 +220,15 @@
 					}
 					let final_price = Math.floor(table[row][column] * rangeVal);
 
-					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price)} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93)}`);
-					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93));
-					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price));
-	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93));
+					let package_price = 0
+					if (package) {
+						package_price = table[4][0];
+					}
+
+					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price) + package_price} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93) + package_price}`);
+					$('[data-input-lid="1584868661139"] .t-calc').text(Math.floor(final_price * 0.93) + package_price);
+					$('[data-input-lid="1584868418389"] [name="Formula"]').attr('value', Math.floor(final_price) + package_price);
+	                $('[data-input-lid="1584868661139"] [name="Formula_2"]').attr('value', Math.floor(final_price * 0.93) + package_price);
 				}
 
 				//определение переменных
@@ -232,11 +237,13 @@
 					[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], // Цветность\Количество
 					[450, 438.75, 427.78, 417.09, 406.66, 396.49, 386.58, 376.92, 367.49, 358.31, 349.35, 340.61, 332.1, 323.8, 315.7, 307.81, 300.11, 292.61, 285.3, 278.16], // МИНИ (297*215)
 					[550, 536.25, 522.84, 509.77, 497.03, 484.6, 472.49, 460.68, 449.16, 437.93, 426.98, 416.31, 405.9, 395.75, 385.86, 376.21, 366.81, 357.64, 348.7, 339.98], // МИДИ (335*230)
-					[1300, 1267.5, 1235.81, 1204.92, 1174.79, 1145.42, 1116.79, 1088.87, 1061.65, 1035.11, 1009.23, 984, 959.4, 935.41, 912.03, 889.23, 867, 845.32, 824.19, 803.58] // Перекидной А3
+					[1300, 1267.5, 1235.81, 1204.92, 1174.79, 1145.42, 1116.79, 1088.87, 1061.65, 1035.11, 1009.23, 984, 959.4, 935.41, 912.03, 889.23, 867, 845.32, 824.19, 803.58], // Перекидной А3
+					[15.0, 15.0, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00, 15.00], // Индивидуальная упаковка
 				];
 				let row = 1;
 				let column = 0;
 				let rangeVal = 1;
+				let package = false;
 
 				// eventListeners
 				$("#rec189845349").off('change');
@@ -267,6 +274,23 @@
 						}
 					}
 					updateFinalPrice();
+				});
+
+				$('[data-input-lid="1695369411257"] .t-checkboxes__wrapper').change(function () { // допы
+
+					if ($(
+							'[data-input-lid="1695369411257"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]')
+						.prop('checked')) {
+						package = $(
+							'[data-input-lid="1695369411257"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]'
+							).prop('checked');
+						updateFinalPrice();
+					} else {
+						package = $(
+							'[data-input-lid="1695369411257"] .t-checkboxes__wrapper [value="Индивидуальная упаковка"]'
+							).prop('checked');
+						updateFinalPrice();
+					}
 				});
 
 				setInterval(updateFinalPrice, 100);
