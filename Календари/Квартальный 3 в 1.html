@@ -250,6 +250,7 @@
 				let column = 0;
 				let numberOfSets = 1;
 				let rangeVal = 50;
+				let count_product = 50;
 				let lamination = false;
 				let spring = false;
 				let lamination_type = 1;
@@ -257,6 +258,7 @@
 				let markup = 7;
 				let package = false;
 
+				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val(count_product)
 				// модификация элементов страницы
 				$('.t-form__screen-current-view').remove();
 				$('.t-form__screen-wrapper .t-input-group_uw, .t-form__screen-wrapper .t-input-group_uw + .t-input-group_cb').wrapAll('<div class="sepcial-flex-wrapper"></div>');
@@ -286,7 +288,7 @@
 
 					let package_price = 0
 					if (package) {
-						package_price = table[3][column];
+						package_price = table[3][column] * count_product;
 					}
 
 					final_price = final_price + Math.ceil(rangeVal / 50) * 50 * markup;
@@ -312,6 +314,7 @@
 
 				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
 					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
+					count_product = Number($('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val());
 					for (let index = 0; index < table[0].length; index++) {
 						if (rangeVal < 0 || !parseInt(rangeVal)) {
 							$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val('');

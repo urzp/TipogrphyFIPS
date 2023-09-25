@@ -222,7 +222,7 @@
 
 					let package_price = 0
 					if (package) {
-						package_price = table[4][0];
+						package_price = table[4][0] * count_product;
 					}
 
 					$('[data-input-lid="1584868418389"] .t-calc').html(`<s>${Math.floor(final_price) + package_price} руб</s> <span style="color:white;">с НДС</span><br/>${Math.floor(final_price * 0.93) + package_price}`);
@@ -242,9 +242,11 @@
 				];
 				let row = 1;
 				let column = 0;
-				let rangeVal = 1;
+				let rangeVal = 50;
+				let count_product = 50;
 				let package = false;
 
+				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val(count_product)
 				// eventListeners
 				$("#rec189845349").off('change');
 				$('.t-select, .t-radio, .t-checkbox, .t-img-select').off('change');
@@ -260,6 +262,7 @@
 				});
 
 				$('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').keyup(function () { // тираж
+					count_product = Number($('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val());
 					rangeVal = $('[data-input-lid="1584868297796"] .t-input.js-tilda-rule').val();
 					for (let index = 0; index < table[0].length; index++) {
 						if (rangeVal < 0 || !parseInt(rangeVal)) {

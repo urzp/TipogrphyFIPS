@@ -8,9 +8,13 @@
 
 let packegElement = document.querySelector("[value='Индивидуальная упаковка']").parentNode
 
+let aligning = {x:'right', y: 'bottom'}
+
+if (window.winWidth < 1200) aligning = {x:'left', y: 'bottom'}
+
 intElements("inf_baner")
 
-packegElement.onmouseover = function(event) { animeteElements("inf_baner", true, {x:event.clientX, y:event.clientY}, {x:20, y: 25}, {x:'right', y: 'bottom'}) };
+packegElement.onmouseover = function(event) { animeteElements("inf_baner", true, {x:event.clientX, y:event.clientY}, {x:20, y: 25}, aligning) };
 
 packegElement.onmouseout = function(event) { animeteElements("inf_baner", false) }
 
@@ -39,7 +43,6 @@ function intElements(className){
 		element.startPosition = startPosition
 		element.parmsGroupeElements = parmsGroupeElements
 	}	
-	console.log(parmsGroupeElements)
 }
 
 function animeteElements(className, showMode = false, position = {x:0,y:0}, gap = {x:0,y:0}, aligning = {x:'left', y:'top'}){
@@ -48,6 +51,7 @@ function animeteElements(className, showMode = false, position = {x:0,y:0}, gap 
 		for (element of elements){
 			let coords = element.getBoundingClientRect()
 			element.style.opacity = 0.0;
+			element.style.display = "none";
 		}
 	}else{
 		if ( aligning.x == 'left' ){ 
@@ -62,6 +66,7 @@ function animeteElements(className, showMode = false, position = {x:0,y:0}, gap 
 		}
 		for (element of elements){
 			element.style.opacity = 1.0;
+			element.style.display = "table";
 			element.style.left = ( position.x  + element.startPosition.x ) + 'px';
 			element.style.top = ( position.y + element.startPosition.y ) + 'px';
 		}		
